@@ -1,0 +1,331 @@
+'use client';
+
+import React from 'react';
+import { RoutePath } from '../types';
+import { 
+  ArrowRight, Shield, Sparkles, Layers, FileText, CheckCircle2, 
+  ChevronRight, Users, Award, ShieldCheck, Database
+} from 'lucide-react';
+import { motion } from 'motion/react';
+
+interface HomeProps {
+  onNavigate: (path: RoutePath) => void;
+}
+
+export default function Home({ onNavigate }: HomeProps) {
+  // Animation Variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: 'spring', stiffness: 100, damping: 20 }
+    }
+  };
+
+  return (
+    <div className="bg-white">
+      {/* 1. HERO SECTION */}
+      <section className="relative overflow-hidden bg-linear-to-b from-slate-50 to-white pt-20 pb-28 md:pt-28 md:pb-36 border-b border-slate-100">
+        {/* Subtle decorative grid/glow backdrops */}
+        <div className="absolute inset-0 bg-[radial-gradient(45rem_50rem_at_top,var(--color-emerald-50),transparent)] opacity-40" />
+        <div className="absolute top-1/2 left-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 bg-emerald-100/30 blur-3xl rounded-full" />
+
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl text-center">
+            
+            {/* Top Badge */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-1.5 rounded-full bg-slate-50 px-3.5 py-1 text-xs font-semibold text-slate-700 border border-slate-200/80 mb-6 text-center"
+            >
+              <Sparkles className="h-3.5 w-3.5 text-emerald-500 animate-pulse" />
+              <span>Scottsdale, AZ &bull; QuickBooks Online Specialists</span>
+            </motion.div>
+
+            {/* Main Headline */}
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.6 }}
+              className="font-display text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl md:text-6xl max-w-3xl mx-auto leading-tight"
+            >
+              Your Business Deserves Better Than Disorganized Books.<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-950 to-slate-700">
+                We Bring Order to Your Business.
+              </span>
+            </motion.h1>
+
+            {/* Subtitle */}
+            <motion.p 
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="mt-6 text-base md:text-lg leading-relaxed text-slate-600 max-w-2xl mx-auto"
+            >
+              We untangle overdue books, organize your receipts, and manage daily back-office tasks so you can stop worrying about paperwork and focus on growing your business.
+            </motion.p>
+
+            {/* CTA Group */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
+            >
+              <button
+                onClick={() => onNavigate('/contact')}
+                className="w-full sm:w-auto group flex items-center justify-center space-x-2 rounded-full bg-slate-900 px-8 py-4 text-sm font-semibold text-white hover:bg-slate-800 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
+              >
+                <span>Book Your Free Consultation</span>
+                <ArrowRight className="h-4.5 w-4.5 text-emerald-400 group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button
+                onClick={() => onNavigate('/books-cleanup')}
+                className="w-full sm:w-auto flex items-center justify-center space-x-2 rounded-full bg-white border border-slate-200 px-8 py-4 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors cursor-pointer"
+              >
+                <span>Explore QuickBooks Cleanup</span>
+              </button>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. SERVICES OVERVIEW */}
+      <section className="py-24 bg-white border-t border-slate-50 relative">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center mb-16">
+            <h2 className="text-xs font-bold tracking-wider text-slate-600 uppercase font-mono">
+              Our Services
+            </h2>
+            <p className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              Everything Your Business Needs. One Reliable Partner.
+            </p>
+            <p className="mt-4 text-base text-slate-600">
+              Growing businesses don't just need bookkeeping. They need dependable back-office support that keeps operations organized, efficient, and stress-free. That's exactly what IQ-docs delivers.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
+            
+            {/* Box 1: Bookkeeping */}
+            <div className="flex flex-col rounded-2xl border border-slate-100 bg-slate-50/50 p-8 transition-all hover:border-slate-200 hover:shadow-md group">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-900 text-white mb-6 group-hover:scale-105 transition-transform">
+                <Layers className="h-5.5 w-5.5 text-emerald-400" />
+              </div>
+              <h3 className="font-display text-xl font-bold text-slate-900 mb-3">
+                Bookkeeping
+              </h3>
+              <p className="text-sm leading-relaxed text-slate-600 mb-6 flex-grow">
+                Complete, accurate, and tax-ready books. We keep your ledgers current, categorize every expense, and reconcile your statements systematically.
+              </p>
+              <ul className="space-y-2 border-t border-slate-200/60 pt-6 text-xs text-slate-700 font-medium">
+                {[
+                  'QuickBooks Online setup',
+                  'Monthly bookkeeping',
+                  'Transaction categorization',
+                  'Bank reconciliations',
+                  'Financial reporting',
+                  'Month-end close',
+                  'Tax-ready books'
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-center space-x-2">
+                    <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Box 2: Document Management */}
+            <div className="flex flex-col rounded-2xl border border-slate-100 bg-slate-50/50 p-8 transition-all hover:border-slate-200 hover:shadow-md group">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-900 text-white mb-6 group-hover:scale-105 transition-transform">
+                <FileText className="h-5.5 w-5.5 text-emerald-400" />
+              </div>
+              <h3 className="font-display text-xl font-bold text-slate-900 mb-3">
+                Document Management
+              </h3>
+              <p className="text-sm leading-relaxed text-slate-600 mb-6 flex-grow">
+                Ditch the paperwork stress. We organize your cloud storage and map receipts directly to transactions so nothing ever gets lost.
+              </p>
+              <ul className="space-y-2 border-t border-slate-200/60 pt-6 text-xs text-slate-700 font-medium">
+                {[
+                  'Digital filing systems',
+                  'Cloud document organization',
+                  'Paper-to-digital conversion',
+                  'Secure file storage',
+                  'Document retrieval',
+                  'Business record organization'
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-center space-x-2">
+                    <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Box 3: Administrative Support */}
+            <div className="flex flex-col rounded-2xl border border-slate-100 bg-slate-50/50 p-8 transition-all hover:border-slate-200 hover:shadow-md group">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-900 text-white mb-6 group-hover:scale-105 transition-transform">
+                <Users className="h-5.5 w-5.5 text-emerald-400" />
+              </div>
+              <h3 className="font-display text-xl font-bold text-slate-900 mb-3">
+                Administrative Support
+              </h3>
+              <p className="text-sm leading-relaxed text-slate-600 mb-6 flex-grow">
+                Help with scheduling, credentialing, administrative tasks, and correspondence. We become your reliable back-office administrative arm.
+              </p>
+              <ul className="space-y-2 border-t border-slate-200/60 pt-6 text-xs text-slate-700 font-medium">
+                {[
+                  'Credentialing support & CME tracking',
+                  'Scheduling assistance & calendar management',
+                  'Timecard processing & expense submissions',
+                  'Business correspondence & administrative organization',
+                  'Data entry & digital records updates'
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-center space-x-2">
+                    <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
+
+          {/* Bottom link */}
+          <div className="mt-12 text-center">
+            <button
+              onClick={() => onNavigate('/services')}
+              className="inline-flex items-center space-x-1.5 text-sm font-bold text-slate-900 hover:text-emerald-600 group cursor-pointer"
+            >
+              <span>See how we work with your business</span>
+              <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. STEP-BY-STEP ONBOARDING */}
+      <section className="py-24 bg-slate-50 border-t border-slate-100 relative">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center mb-16">
+            <h2 className="text-xs font-bold tracking-wider text-slate-600 uppercase font-mono">
+              Simple. Transparent. Efficient.
+            </h2>
+            <p className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              Getting started is easier than you think.
+            </p>
+            <p className="mt-4 text-base text-slate-600">
+              We know you are busy, so we make sure the transition is as smooth and simple as possible.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 relative">
+            
+            {/* Step 1 */}
+            <div className="relative flex flex-col items-start bg-white rounded-2xl border border-slate-100 p-8 shadow-xs">
+              <span className="absolute -top-6 left-8 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-900 font-mono text-lg font-bold text-emerald-400 shadow-md">
+                01
+              </span>
+              <h3 className="font-display text-xl font-bold text-slate-900 mt-4 mb-3">
+                Schedule Your Free Consultation
+              </h3>
+              <p className="text-sm leading-relaxed text-slate-600">
+                We'll learn about your business, understand your challenges, and identify exactly where we can help.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="relative flex flex-col items-start bg-white rounded-2xl border border-slate-100 p-8 shadow-xs">
+              <span className="absolute -top-6 left-8 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-900 font-mono text-lg font-bold text-emerald-400 shadow-md">
+                02
+              </span>
+              <h3 className="font-display text-xl font-bold text-slate-900 mt-4 mb-3">
+                We Build the Plan
+              </h3>
+              <p className="text-sm leading-relaxed text-slate-600">
+                Whether you need bookkeeping cleanup, ongoing monthly bookkeeping, document organization, administrative support—or all three—we create a customized plan built around your business.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="relative flex flex-col items-start bg-white rounded-2xl border border-slate-100 p-8 shadow-xs">
+              <span className="absolute -top-6 left-8 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-900 font-mono text-lg font-bold text-emerald-400 shadow-md">
+                03
+              </span>
+              <h3 className="font-display text-xl font-bold text-slate-900 mt-4 mb-3">
+                We Handle the Work
+              </h3>
+              <p className="text-sm leading-relaxed text-slate-600">
+                Once we're onboard, you can stop worrying about the back office. Your books stay current. Your files stay organized. Your administrative work gets done. You get your time back.
+              </p>
+            </div>
+
+          </div>
+
+          <div className="mt-16 bg-white rounded-2xl border border-slate-100 p-8 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="flex items-center space-x-4">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
+                <Database className="h-5 w-5" />
+              </div>
+              <div>
+                <h4 className="text-sm font-bold text-slate-900">Are your books several months (or years) behind?</h4>
+                <p className="text-xs text-slate-500">No judgment here. We specialize in catching up overdue accounts quickly.</p>
+              </div>
+            </div>
+            <button
+              onClick={() => onNavigate('/books-cleanup')}
+              className="inline-flex items-center justify-center space-x-2 rounded-full bg-slate-900 hover:bg-slate-800 px-5 py-2.5 text-xs font-semibold text-white transition-colors cursor-pointer w-full sm:w-auto"
+            >
+              <span>Learn About Books Cleanup</span>
+              <ArrowRight className="h-3.5 w-3.5 text-emerald-400" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. CTA SECTION */}
+      <section className="bg-slate-950 text-white py-20 relative overflow-hidden">
+        {/* Subtle glowing backgrounds */}
+        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 h-[32rem] w-[32rem] bg-emerald-500/10 blur-3xl rounded-full" />
+        <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/3 h-[24rem] w-[24rem] bg-teal-500/10 blur-3xl rounded-full" />
+
+        <div className="mx-auto max-w-5xl px-6 lg:px-8 relative text-center">
+          <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight">
+            Let's Simplify Your Business.
+          </h2>
+          <p className="mt-4 text-base text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            Let us take care of the paperwork, organizing, and daily ledger entries so you can focus on your business. Friendly, honest, and dedicated Scottsdale support.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <button
+              onClick={() => onNavigate('/contact')}
+              className="flex items-center justify-center space-x-2 rounded-full bg-slate-900 hover:bg-slate-800 px-8 py-4 text-sm font-semibold text-white border border-slate-800 transition-colors shadow-lg cursor-pointer"
+            >
+              <span>Book Your Free Consultation</span>
+              <ArrowRight className="h-4.5 w-4.5 text-emerald-400" />
+            </button>
+            <button
+              onClick={() => onNavigate('/why-IQ-docs')}
+              className="flex items-center justify-center space-x-2 rounded-full bg-white hover:bg-slate-100 text-slate-900 px-8 py-4 text-sm font-semibold transition-colors cursor-pointer"
+            >
+              <span>Why IQ-docs</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

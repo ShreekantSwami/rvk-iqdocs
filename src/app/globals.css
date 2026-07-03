@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-slate-50: #f4f6fc;
+  --color-slate-100: #e5ebf4;
+  --color-slate-200: #cbd7e9;
+  --color-slate-300: #9cb0d1;
+  --color-slate-400: #6e8ab8;
+  --color-slate-500: #4c6999;
+  --color-slate-600: #39527a;
+  --color-slate-700: #293c5c;
+  --color-slate-800: #16243d;
+  --color-slate-900: #002147;
+  --color-slate-950: #001229;
+  --color-emerald-50: #fdfaf2;
+  --color-emerald-100: #fbf1d5;
+  --color-emerald-200: #f7e1a3;
+  --color-emerald-300: #f2ca6b;
+  --color-emerald-400: #d4af37;
+  --color-emerald-500: #b8860b;
+  --color-emerald-600: #996515;
+  --color-emerald-700: #7c4c03;
+  --color-emerald-800: #623a02;
+  --color-emerald-900: #4a2801;
+  --color-emerald-950: #2b1400;
+  --color-teal-50: #fdfaf2;
+  --color-teal-100: #fbf1d5;
+  --color-teal-200: #f7e1a3;
+  --color-teal-300: #f2ca6b;
+  --color-teal-400: #d4af37;
+  --color-teal-500: #b8860b;
+  --color-teal-600: #996515;
+  --color-teal-700: #7c4c03;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #39527a;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
