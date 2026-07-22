@@ -165,15 +165,6 @@ export default function BooksCleanup({ onNavigate }: BooksCleanupProps) {
               <p className="text-base text-slate-600">
                 We perform a comprehensive, deep-cleaning protocol to make sure your financial ledger is perfectly dialed-in, verified, and transparent.
               </p>
-              <div className="pt-4">
-                <button
-                  onClick={() => onNavigate('/contact')}
-                  className="inline-flex items-center justify-center space-x-2 rounded-full bg-slate-900 hover:bg-slate-800 px-6 py-3.5 text-sm font-semibold text-white transition-colors cursor-pointer w-full sm:w-auto shadow-sm"
-                >
-                  <span>Get Your Personalized Cleanup Quote</span>
-                  <ArrowRight className="h-4 w-4 text-emerald-400" />
-                </button>
-              </div>
             </div>
 
             <div className="lg:col-span-7 bg-white rounded-2xl border border-slate-100 p-8 shadow-xs space-y-6">
@@ -238,13 +229,6 @@ export default function BooksCleanup({ onNavigate }: BooksCleanupProps) {
                 <p className="text-xs text-slate-400 leading-relaxed mt-0.5">We organize and prepare your historical records so your chosen tax professional can file with ease.</p>
               </div>
             </div>
-            <button
-              onClick={() => onNavigate('/contact')}
-              className="inline-flex items-center justify-center space-x-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-950 px-6 py-3 text-xs font-semibold transition-colors cursor-pointer w-full md:w-auto"
-            >
-              <span>Talk to a Cleanup Specialist</span>
-              <ArrowRight className="h-4.5 w-4.5" />
-            </button>
           </div>
         </div>
       </section>
