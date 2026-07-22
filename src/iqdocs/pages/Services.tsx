@@ -1,12 +1,19 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { RoutePath } from '../types';
 import {
-  ShieldAlert, ShieldCheck, Zap, Layers, FileText, Users,
-  HelpCircle, ChevronDown, Check, X, ArrowRight, CheckCircle2
-} from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+  ArrowRight,
+  CheckCircle2,
+  ChevronDown,
+  FileText,
+  HelpCircle,
+  Layers,
+  ShieldCheck,
+  Users,
+  Zap,
+} from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import { useState } from "react";
+import type { RoutePath } from "../types";
 
 interface ServicesProps {
   onNavigate: (path: RoutePath) => void;
@@ -18,25 +25,29 @@ export default function Services({ onNavigate }: ServicesProps) {
 
   const faqs = [
     {
-      id: 'faq-1',
-      question: 'How do you keep my business information secure?',
-      answer: 'We take security seriously. All connections to your bank statements are read-only, meaning we can never move or access your funds. We store your digital documents in secure, password-protected cloud folders, and we never sell or share your business data.'
+      id: "faq-1",
+      question: "How do you keep my business information secure?",
+      answer:
+        "We take security seriously. All connections to your bank statements are read-only, meaning we can never move or access your funds. We store your digital documents in secure, password-protected cloud folders, and we never sell or share your business data.",
     },
     {
-      id: 'faq-2',
-      question: 'How long does it take to get started?',
-      answer: 'For standard ongoing bookkeeping, we can have you set up and running in 5 to 7 business days. If your books are behind by months or years, our cleanup team will jump in to organize and catch up your records, which typically takes 2 to 4 weeks depending on the backlog size.'
+      id: "faq-2",
+      question: "How long does it take to get started?",
+      answer:
+        "For standard ongoing bookkeeping, we can have you set up and running in 5 to 7 business days. If your books are behind by months or years, our cleanup team will jump in to organize and catch up your records, which typically takes 2 to 4 weeks depending on the backlog size.",
     },
     {
-      id: 'faq-3',
-      question: 'Do you work with QuickBooks?',
-      answer: 'Yes! We work natively with QuickBooks Online and other standard small business tools. We do not replace your accounts—we just keep them clean, categorized, and up-to-date.'
+      id: "faq-3",
+      question: "Do you work with QuickBooks?",
+      answer:
+        "Yes! We work natively with QuickBooks Online and other standard small business tools. We do not replace your accounts—we just keep them clean, categorized, and up-to-date.",
     },
     {
-      id: 'faq-4',
-      question: 'Will I have a real person to talk to?',
-      answer: 'Absolutely. You will be paired with a dedicated bookkeeping and admin helper who knows your business by name. No automated ticketing systems or robotic support—just real, helpful people.'
-    }
+      id: "faq-4",
+      question: "Will I have a real person to talk to?",
+      answer:
+        "Absolutely. You will be paired with a dedicated bookkeeping and admin helper who knows your business by name. No automated ticketing systems or robotic support—just real, helpful people.",
+    },
   ];
 
   return (

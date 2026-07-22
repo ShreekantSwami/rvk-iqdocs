@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useRouter } from 'next/navigation';
-import Home from '@/iqdocs/pages/Home';
-import type { RoutePath } from '@/iqdocs/types';
+import { useRouter } from "next/navigation";
+import Home from "@/iqdocs/pages/Home";
+import type { RoutePath } from "@/iqdocs/types";
 
 export default function HomeRoute() {
   const router = useRouter();

@@ -1,12 +1,14 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { RoutePath } from '../types';
-import { 
-  ShieldCheck, Compass, HeartHandshake, MapPin, 
-  CheckCircle2, Users, FileText, ArrowRight 
-} from 'lucide-react';
-import { motion } from 'motion/react';
+import {
+  ArrowRight,
+  CheckCircle2,
+  Compass,
+  HeartHandshake,
+  MapPin,
+  ShieldCheck,
+} from "lucide-react";
+import type { RoutePath } from "../types";
 
 interface WhyIQDocsProps {
   onNavigate: (path: RoutePath) => void;
@@ -15,7 +17,6 @@ interface WhyIQDocsProps {
 export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
   return (
     <div className="bg-white">
-      
       {/* 1. HERO SECTION */}
       <section className="relative overflow-hidden bg-slate-50 py-16 sm:py-20 md:py-16 md:py-24 lg:py-32 border-b border-slate-100">
         <div className="absolute inset-0 bg-[radial-gradient(40rem_40rem_at_top,var(--color-emerald-50),transparent)] opacity-60" />
@@ -25,10 +26,13 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
               Our Story & Values
             </span>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900">
-              Down-to-Earth Help for Locums, Healthcare, Professionals, IT, Small Business & Individuals
+              Down-to-Earth Help for Locums, Healthcare, Professionals, IT,
+              Small Business & Individuals
             </h1>
-<p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-slate-600 max-w-2xl mx-auto">
-              Our service is built on integrity, simple communication, and genuine care. We help Houston businesses get their books cleaned up and kept organized without any complicated jargon.
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-slate-600 max-w-2xl mx-auto">
+              Our service is built on integrity, simple communication, and
+              genuine care. We help Houston businesses get their books cleaned
+              up and kept organized without any complicated jargon.
             </p>
           </div>
         </div>
@@ -47,7 +51,6 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-
             {/* Pillar 1 */}
             <div className="bg-slate-50/50 rounded-2xl border border-slate-100 p-8 hover:border-slate-200 hover:bg-white hover:shadow-md transition-all group">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-900 text-white mb-6 group-hover:scale-105 transition-transform">
@@ -57,7 +60,8 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
                 Accuracy You Can Trust
               </h3>
               <p className="text-sm leading-relaxed text-slate-600">
-                Detailed, organized bookkeeping practices designed to keep your records reliable and current.
+                Detailed, organized bookkeeping practices designed to keep your
+                records reliable and current.
               </p>
             </div>
 
@@ -83,10 +87,10 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
                 Responsive Communication
               </h3>
               <p className="text-sm leading-relaxed text-slate-600">
-                Clear, timely support from a team that values strong client relationships.
+                Clear, timely support from a team that values strong client
+                relationships.
               </p>
             </div>
-
           </div>
         </div>
       </section>
@@ -98,7 +102,6 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
             <div className="space-y-6">
               <div className="inline-flex items-center space-x-2 bg-slate-800 px-3.5 py-1.5 rounded-lg border border-slate-700 text-xs font-mono font-bold text-emerald-400">
                 <MapPin className="h-4 w-4 shrink-0" />
@@ -108,19 +111,41 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
                 Trusted Professionals Keeping Your Business Organized
               </h2>
               <p className="text-sm leading-relaxed text-slate-300">
-                At IQ-docs, we believe exceptional bookkeeping is built on experience, accuracy, communication, and genuine care. Our team of skilled bookkeeping and administrative professionals helps small businesses stay organized by maintaining accurate transactions, managing receipts, and creating streamlined digital records—so you can focus on running your business with confidence.
+                At IQ-docs, we believe exceptional bookkeeping is built on
+                experience, accuracy, communication, and genuine care. Our team
+                of skilled bookkeeping and administrative professionals helps
+                small businesses stay organized by maintaining accurate
+                transactions, managing receipts, and creating streamlined
+                digital records—so you can focus on running your business with
+                confidence.
               </p>
               <div className="space-y-4 pt-4 border-t border-slate-800">
                 {[
-                  { title: 'Experienced Bookkeeping Professionals', text: 'Our knowledgeable and approachable team provides dependable bookkeeping support tailored to the needs of local small businesses. We combine attention to detail with personalized service to help keep your financial records accurate and up to date.' },
-                  { title: 'Secure Digital Organization', text: 'We create structured, private cloud-based filing systems to organize your receipts, financial documents, and business records, making important information easy to access when you need it.' },
-                  { title: 'Fully Insured for Added Confidence', text: 'Your trust matters. IQ-docs maintains comprehensive business liability coverage, providing added reassurance when you partner with us for your bookkeeping and back-office needs.' }
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-start space-x-3.5">
+                  {
+                    title: "Experienced Bookkeeping Professionals",
+                    text: "Our knowledgeable and approachable team provides dependable bookkeeping support tailored to the needs of local small businesses. We combine attention to detail with personalized service to help keep your financial records accurate and up to date.",
+                  },
+                  {
+                    title: "Secure Digital Organization",
+                    text: "We create structured, private cloud-based filing systems to organize your receipts, financial documents, and business records, making important information easy to access when you need it.",
+                  },
+                  {
+                    title: "Fully Insured for Added Confidence",
+                    text: "Your trust matters. IQ-docs maintains comprehensive business liability coverage, providing added reassurance when you partner with us for your bookkeeping and back-office needs.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="flex items-start space-x-3.5"
+                  >
                     <CheckCircle2 className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="text-sm font-bold text-slate-100">{item.title}</h4>
-                      <p className="text-xs text-slate-400 leading-relaxed mt-1">{item.text}</p>
+                      <h4 className="text-sm font-bold text-slate-100">
+                        {item.title}
+                      </h4>
+                      <p className="text-xs text-slate-400 leading-relaxed mt-1">
+                        {item.text}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -134,16 +159,32 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[
-                  { label: 'Bookkeeping Method', val: 'Double-Entry Reconciliation' },
-                  { label: 'Service Area', val: 'Houston, Texas & Surrounding Areas' },
-                  { label: 'Liability Coverage', val: '$2M Business Insurance Coverage' },
-                  { label: 'Software Integrations', val: 'QuickBooks Online & Xero' },
-                  { label: 'Client Onboarding', val: '5-7 Business Days' },
-                  { label: 'BUSINESS HOURS', val: '6:00 AM - 6:00 PM CT' }
-                ].map((stat, i) => (
-                  <div key={i} className="space-y-1">
-                    <div className="text-[10px] font-mono tracking-wider text-slate-500 uppercase">{stat.label}</div>
-                    <div className="text-sm font-bold text-slate-200">{stat.val}</div>
+                  {
+                    label: "Bookkeeping Method",
+                    val: "Double-Entry Reconciliation",
+                  },
+                  {
+                    label: "Service Area",
+                    val: "Houston, Texas & Surrounding Areas",
+                  },
+                  {
+                    label: "Liability Coverage",
+                    val: "$2M Business Insurance Coverage",
+                  },
+                  {
+                    label: "Software Integrations",
+                    val: "QuickBooks Online & Xero",
+                  },
+                  { label: "Client Onboarding", val: "5-7 Business Days" },
+                  { label: "BUSINESS HOURS", val: "6:00 AM - 6:00 PM CT" },
+                ].map((stat) => (
+                  <div key={stat.label} className="space-y-1">
+                    <div className="text-[10px] font-mono tracking-wider text-slate-500 uppercase">
+                      {stat.label}
+                    </div>
+                    <div className="text-sm font-bold text-slate-200">
+                      {stat.val}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -151,10 +192,13 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
                 <p className="font-bold text-slate-200 text-base mb-2">
                   Reliable Support Without the Complexity
                 </p>
-                With IQ-docs, you gain a dependable back-office partner dedicated to keeping your business organized and your records current. No unnecessary complexity, no confusing processes—just professional, responsive support that helps you stay in control of your finances and operations.
+                With IQ-docs, you gain a dependable back-office partner
+                dedicated to keeping your business organized and your records
+                current. No unnecessary complexity, no confusing processes—just
+                professional, responsive support that helps you stay in control
+                of your finances and operations.
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -173,7 +217,7 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
             <button
               type="button"
-              onClick={() => onNavigate('/contact')}
+              onClick={() => onNavigate("/contact")}
               className="flex items-center justify-center space-x-2 rounded-full bg-slate-900 hover:bg-slate-800 px-8 py-4 text-sm font-semibold text-white transition-colors cursor-pointer shadow-sm"
             >
               <span>Book Your Free Consultation</span>
@@ -181,7 +225,7 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
             </button>
             <button
               type="button"
-              onClick={() => onNavigate('/services')}
+              onClick={() => onNavigate("/services")}
               className="flex items-center justify-center space-x-2 rounded-full bg-white hover:bg-slate-50 border border-slate-200 px-8 py-4 text-sm font-semibold text-slate-700 transition-colors cursor-pointer"
             >
               <span>Explore Our Services</span>
@@ -189,7 +233,6 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
           </div>
         </div>
       </section>
-
     </div>
   );
 }

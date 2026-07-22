@@ -2,7 +2,12 @@
  * Shared types for the IQ-docs application
  */
 
-export type RoutePath = '/' | '/services' | '/why-IQ-docs' | '/books-cleanup' | '/contact';
+export type RoutePath =
+  | "/"
+  | "/services"
+  | "/why-IQ-docs"
+  | "/books-cleanup"
+  | "/contact";
 
 export interface Testimonial {
   id: string;

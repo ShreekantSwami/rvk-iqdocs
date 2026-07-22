@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useRouter } from 'next/navigation';
-import Contact from '@/iqdocs/pages/Contact';
-import type { RoutePath } from '@/iqdocs/types';
+import { useRouter } from "next/navigation";
+import Contact from "@/iqdocs/pages/Contact";
+import type { RoutePath } from "@/iqdocs/types";
 
 export default function ContactRoute() {
   const router = useRouter();

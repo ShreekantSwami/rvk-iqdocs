@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useRouter } from 'next/navigation';
-import Services from '@/iqdocs/pages/Services';
-import type { RoutePath } from '@/iqdocs/types';
+import { useRouter } from "next/navigation";
+import Services from "@/iqdocs/pages/Services";
+import type { RoutePath } from "@/iqdocs/types";
 
 export default function ServicesRoute() {
   const router = useRouter();

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useRouter } from 'next/navigation';
-import BooksCleanup from '@/iqdocs/pages/BooksCleanup';
-import type { RoutePath } from '@/iqdocs/types';
+import { useRouter } from "next/navigation";
+import BooksCleanup from "@/iqdocs/pages/BooksCleanup";
+import type { RoutePath } from "@/iqdocs/types";
 
 export default function BooksCleanupRoute() {
   const router = useRouter();

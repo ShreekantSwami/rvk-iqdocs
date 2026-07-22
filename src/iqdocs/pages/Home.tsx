@@ -1,12 +1,18 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { RoutePath } from '../types';
-import { 
-  ArrowRight, Shield, Sparkles, Layers, FileText, CheckCircle2, 
-  ChevronRight, Users, Award, ShieldCheck, Database
-} from 'lucide-react';
-import { motion } from 'motion/react';
+import {
+  ArrowRight,
+  CheckCircle2,
+  ChevronRight,
+  Database,
+  FileText,
+  Layers,
+  Sparkles,
+  Users,
+} from "lucide-react";
+import { motion } from "motion/react";
+import Image from "next/image";
+import type { RoutePath } from "../types";
 
 interface HomeProps {
   onNavigate: (path: RoutePath) => void;
@@ -14,21 +20,21 @@ interface HomeProps {
 
 export default function Home({ onNavigate }: HomeProps) {
   // Animation Variants
-  const containerVariants = {
+  const _containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15 }
-    }
+      transition: { staggerChildren: 0.15 },
+    },
   };
 
-  const itemVariants = {
+  const _itemVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: 'spring', stiffness: 100, damping: 20 }
-    }
+      transition: { type: "spring", stiffness: 100, damping: 20 },
+    },
   };
 
   return (
@@ -40,59 +46,84 @@ export default function Home({ onNavigate }: HomeProps) {
         <div className="absolute top-1/2 left-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 bg-emerald-100/30 blur-3xl rounded-full" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            
-            {/* Top Badge */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-1.5 rounded-full bg-slate-50 px-3 py-1 text-[10px] sm:text-xs font-semibold text-slate-700 border border-slate-200/80 mb-4 sm:mb-6 text-center"
-            >
-              <Sparkles className="h-3.5 w-3.5 text-emerald-500 animate-pulse" />
-              <span>Houston, TX &bull; QuickBooks Online Specialists</span>
-            </motion.div>
-
-            {/* Main Headline */}
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.6 }}
-              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-950 max-w-3xl mx-auto leading-tight"
-            >
-              Helping businesses save time, stay compliant, and make smarter financial decisions.
-            </motion.h1>
-
-            {/* Subtitle */}
-            <motion.p 
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-slate-600 max-w-2xl mx-auto"
-            >
-              Behind on your bookkeeping? We'll get your books back on track, organize your paperwork, and take care of your back-office administration&mdash;so you can get back to running your business with confidence.
-            </motion.p>
-
-            {/* CTA Group */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
-            >
-              <button
-                onClick={() => onNavigate('/contact')}
-                className="w-full sm:w-auto group flex items-center justify-center space-x-2 rounded-full bg-slate-900 px-8 py-4 text-sm font-semibold text-white hover:bg-slate-800 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+            {/* Left: Text Content */}
+            <div className="text-center lg:text-left">
+              {/* Top Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-1.5 rounded-full bg-slate-50 px-3 py-1 text-[10px] sm:text-xs font-semibold text-slate-700 border border-slate-200/80 mb-4 sm:mb-6"
               >
-                <span>Book Your Free Consultation</span>
-                <ArrowRight className="h-4.5 w-4.5 text-emerald-400 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button
-                onClick={() => onNavigate('/books-cleanup')}
-                className="w-full sm:w-auto flex items-center justify-center space-x-2 rounded-full bg-white border border-slate-200 px-8 py-4 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors cursor-pointer"
+                <Sparkles className="h-3.5 w-3.5 text-emerald-500 animate-pulse" />
+                <span>Houston, TX &bull; QuickBooks Online Specialists</span>
+              </motion.div>
+
+              {/* Main Headline */}
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1, duration: 0.6 }}
+                className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-slate-950 leading-tight"
               >
-                <span>Explore QuickBooks Cleanup</span>
-              </button>
+                Helping businesses save time, stay compliant, and make smarter
+                financial decisions.
+              </motion.h1>
+
+              {/* Subtitle */}
+              <motion.p
+                initial={{ opacity: 0, y: 25 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+                className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-slate-600 max-w-xl mx-auto lg:mx-0"
+              >
+                Behind on your bookkeeping? We'll get your books back on track,
+                organize your paperwork, and take care of your back-office
+                administration&mdash;so you can get back to running your
+                business with confidence.
+              </motion.p>
+
+              {/* CTA Group */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="mt-8 flex flex-col sm:flex-row items-center lg:justify-start justify-center gap-4"
+              >
+                <button
+                  type="button"
+                  onClick={() => onNavigate("/contact")}
+                  className="w-full sm:w-auto group flex items-center justify-center space-x-2 rounded-full bg-slate-900 px-8 py-4 text-sm font-semibold text-white hover:bg-slate-800 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
+                >
+                  <span>Book Your Free Consultation</span>
+                  <ArrowRight className="h-4.5 w-4.5 text-emerald-400 group-hover:translate-x-1 transition-transform" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => onNavigate("/books-cleanup")}
+                  className="w-full sm:w-auto flex items-center justify-center space-x-2 rounded-full bg-white border border-slate-200 px-8 py-4 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors cursor-pointer"
+                >
+                  <span>Explore QuickBooks Cleanup</span>
+                </button>
+              </motion.div>
+            </div>
+
+            {/* Right: Professional Illustration */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4, duration: 0.7 }}
+              className="hidden lg:flex justify-center items-center"
+            >
+              <Image
+                src="/hero-illustration.jpg"
+                alt="Professional bookkeeping illustration"
+                width={500}
+                height={500}
+                className="w-full max-w-md h-auto object-contain rounded-2xl shadow-xl"
+                priority
+              />
             </motion.div>
           </div>
         </div>
@@ -109,12 +140,13 @@ export default function Home({ onNavigate }: HomeProps) {
               Everything Your Business Needs. One Reliable Partner.
             </p>
             <p className="mt-4 text-base text-slate-600">
-              Growing businesses don't just need bookkeeping. They need dependable back-office support that keeps operations organized, efficient, and stress-free. That's exactly what IQ-docs delivers.
+              Growing businesses don't just need bookkeeping. They need
+              dependable back-office support that keeps operations organized,
+              efficient, and stress-free. That's exactly what IQ-docs delivers.
             </p>
           </div>
 
           <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
-            
             {/* Box 1: Bookkeeping */}
             <div className="flex flex-col rounded-2xl border border-slate-100 bg-slate-50/50 p-8 transition-all hover:border-slate-200 hover:shadow-md group">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-900 text-white mb-6 group-hover:scale-105 transition-transform">
@@ -124,19 +156,21 @@ export default function Home({ onNavigate }: HomeProps) {
                 Bookkeeping
               </h3>
               <p className="text-sm leading-relaxed text-slate-600 mb-6 flex-grow">
-                Complete, accurate, and tax-ready books. We keep your ledgers current, categorize every expense, and reconcile your statements systematically.
+                Complete, accurate, and tax-ready books. We keep your ledgers
+                current, categorize every expense, and reconcile your statements
+                systematically.
               </p>
               <ul className="space-y-2 border-t border-slate-200/60 pt-6 text-xs text-slate-700 font-medium">
                 {[
-                  'QuickBooks Online setup',
-                  'Monthly bookkeeping',
-                  'Transaction categorization',
-                  'Bank reconciliations',
-                  'Financial reporting',
-                  'Month-end close',
-                  'Tax-ready books'
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-center space-x-2">
+                  "QuickBooks Online setup",
+                  "Monthly bookkeeping",
+                  "Transaction categorization",
+                  "Bank reconciliations",
+                  "Financial reporting",
+                  "Month-end close",
+                  "Tax-ready books",
+                ].map((item) => (
+                  <li key={item} className="flex items-center space-x-2">
                     <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
                     <span>{item}</span>
                   </li>
@@ -153,18 +187,19 @@ export default function Home({ onNavigate }: HomeProps) {
                 Document Management
               </h3>
               <p className="text-sm leading-relaxed text-slate-600 mb-6 flex-grow">
-                Ditch the paperwork stress. We organize your cloud storage and map receipts directly to transactions so nothing ever gets lost.
+                Ditch the paperwork stress. We organize your cloud storage and
+                map receipts directly to transactions so nothing ever gets lost.
               </p>
               <ul className="space-y-2 border-t border-slate-200/60 pt-6 text-xs text-slate-700 font-medium">
                 {[
-                  'Digital filing systems',
-                  'Cloud document organization',
-                  'Paper-to-digital conversion',
-                  'Secure file storage',
-                  'Document retrieval',
-                  'Business record organization'
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-center space-x-2">
+                  "Digital filing systems",
+                  "Cloud document organization",
+                  "Paper-to-digital conversion",
+                  "Secure file storage",
+                  "Document retrieval",
+                  "Business record organization",
+                ].map((item) => (
+                  <li key={item} className="flex items-center space-x-2">
                     <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
                     <span>{item}</span>
                   </li>
@@ -181,30 +216,32 @@ export default function Home({ onNavigate }: HomeProps) {
                 Administrative Support
               </h3>
               <p className="text-sm leading-relaxed text-slate-600 mb-6 flex-grow">
-                Help with scheduling, credentialing, administrative tasks, and correspondence. We become your reliable back-office administrative arm.
+                Help with scheduling, credentialing, administrative tasks, and
+                correspondence. We become your reliable back-office
+                administrative arm.
               </p>
               <ul className="space-y-2 border-t border-slate-200/60 pt-6 text-xs text-slate-700 font-medium">
                 {[
-                  'Credentialing support & CME tracking',
-                  'Scheduling assistance & calendar management',
-                  'Timecard processing & expense submissions',
-                  'Business correspondence & administrative organization',
-                  'Data entry & digital records updates'
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-center space-x-2">
+                  "Credentialing support & CME tracking",
+                  "Scheduling assistance & calendar management",
+                  "Timecard processing & expense submissions",
+                  "Business correspondence & administrative organization",
+                  "Data entry & digital records updates",
+                ].map((item) => (
+                  <li key={item} className="flex items-center space-x-2">
                     <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-
           </div>
 
           {/* Bottom link */}
           <div className="mt-12 text-center">
             <button
-              onClick={() => onNavigate('/services')}
+              type="button"
+              onClick={() => onNavigate("/services")}
               className="inline-flex items-center space-x-1.5 text-sm font-bold text-slate-900 hover:text-emerald-600 group cursor-pointer"
             >
               <span>See how we work with your business</span>
@@ -225,12 +262,12 @@ export default function Home({ onNavigate }: HomeProps) {
               Getting started is easier than you think.
             </p>
             <p className="mt-4 text-base text-slate-600">
-              We know you are busy, so we make sure the transition is as smooth and simple as possible.
+              We know you are busy, so we make sure the transition is as smooth
+              and simple as possible.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 relative">
-            
             {/* Step 1 */}
             <div className="relative flex flex-col items-start bg-white rounded-2xl border border-slate-100 p-8 shadow-xs">
               <span className="absolute -top-6 left-8 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-900 font-mono text-lg font-bold text-emerald-400 shadow-md">
@@ -240,7 +277,8 @@ export default function Home({ onNavigate }: HomeProps) {
                 Schedule Your Free Consultation
               </h3>
               <p className="text-sm leading-relaxed text-slate-600">
-                We'll learn about your business, understand your challenges, and identify exactly where we can help.
+                We'll learn about your business, understand your challenges, and
+                identify exactly where we can help.
               </p>
             </div>
 
@@ -253,7 +291,10 @@ export default function Home({ onNavigate }: HomeProps) {
                 We Build the Plan
               </h3>
               <p className="text-sm leading-relaxed text-slate-600">
-                Whether you need bookkeeping cleanup, ongoing monthly bookkeeping, document organization, administrative support—or all three—we create a customized plan built around your business.
+                Whether you need bookkeeping cleanup, ongoing monthly
+                bookkeeping, document organization, administrative support—or
+                all three—we create a customized plan built around your
+                business.
               </p>
             </div>
 
@@ -266,10 +307,11 @@ export default function Home({ onNavigate }: HomeProps) {
                 We Handle the Work
               </h3>
               <p className="text-sm leading-relaxed text-slate-600">
-                Once we're onboard, you can stop worrying about the back office. Your books stay current. Your files stay organized. Your administrative work gets done. You get your time back.
+                Once we're onboard, you can stop worrying about the back office.
+                Your books stay current. Your files stay organized. Your
+                administrative work gets done. You get your time back.
               </p>
             </div>
-
           </div>
 
           <div className="mt-16 bg-white rounded-2xl border border-slate-100 p-8 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -278,12 +320,18 @@ export default function Home({ onNavigate }: HomeProps) {
                 <Database className="h-5 w-5" />
               </div>
               <div>
-                <h4 className="text-sm font-bold text-slate-900">Are your books several months (or years) behind?</h4>
-                <p className="text-xs text-slate-500">No judgment here. We specialize in catching up overdue accounts quickly.</p>
+                <h4 className="text-sm font-bold text-slate-900">
+                  Are your books several months (or years) behind?
+                </h4>
+                <p className="text-xs text-slate-500">
+                  No judgment here. We specialize in catching up overdue
+                  accounts quickly.
+                </p>
               </div>
             </div>
             <button
-              onClick={() => onNavigate('/books-cleanup')}
+              type="button"
+              onClick={() => onNavigate("/books-cleanup")}
               className="inline-flex items-center justify-center space-x-2 rounded-full bg-slate-900 hover:bg-slate-800 px-5 py-2.5 text-xs font-semibold text-white transition-colors cursor-pointer w-full sm:w-auto"
             >
               <span>Learn About Books Cleanup</span>
@@ -307,7 +355,7 @@ export default function Home({ onNavigate }: HomeProps) {
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
             <button
               type="button"
-              onClick={() => onNavigate('/contact')}
+              onClick={() => onNavigate("/contact")}
               className="flex items-center justify-center space-x-2 rounded-full bg-slate-900 hover:bg-slate-800 px-8 py-4 text-sm font-semibold text-white transition-colors cursor-pointer shadow-sm"
             >
               <span>Book Your Free Consultation</span>
@@ -315,7 +363,7 @@ export default function Home({ onNavigate }: HomeProps) {
             </button>
             <button
               type="button"
-              onClick={() => onNavigate('/why-IQ-docs')}
+              onClick={() => onNavigate("/why-IQ-docs")}
               className="flex items-center justify-center space-x-2 rounded-full bg-white hover:bg-slate-50 border border-slate-200 px-8 py-4 text-sm font-semibold text-slate-700 transition-colors cursor-pointer"
             >
               <span>Explore Our Services</span>

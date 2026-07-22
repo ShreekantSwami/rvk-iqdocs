@@ -1,18 +1,18 @@
-import Link from 'next/link';
-import { ArrowUpRight, Clock, Mail, Phone, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight, Clock, Mail, ShieldCheck } from "lucide-react";
+import Link from "next/link";
 
 const serviceLinks = [
-  { label: 'Bookkeeping', href: '/services' },
-  { label: 'Document Management', href: '/services' },
-  { label: 'Administrative Support', href: '/services' },
-  { label: 'QuickBooks Online Cleanup & Catch-Up', href: '/books-cleanup' },
+  { label: "Bookkeeping", href: "/services" },
+  { label: "Document Management", href: "/services" },
+  { label: "Administrative Support", href: "/services" },
+  { label: "QuickBooks Online Cleanup & Catch-Up", href: "/books-cleanup" },
 ];
 
 const differentiators = [
-  { label: 'Accuracy You Can Trust', href: '/why-IQ-docs' },
-  { label: 'Personalized Service', href: '/why-IQ-docs' },
-  { label: 'Responsive Communication', href: '/why-IQ-docs' },
-  { label: 'Local Service / National Standards', href: '/why-IQ-docs' },
+  { label: "Accuracy You Can Trust", href: "/why-IQ-docs" },
+  { label: "Personalized Service", href: "/why-IQ-docs" },
+  { label: "Responsive Communication", href: "/why-IQ-docs" },
+  { label: "Local Service / National Standards", href: "/why-IQ-docs" },
 ];
 
 export default function Footer() {
@@ -31,11 +31,15 @@ export default function Footer() {
                 IQ<span className="text-emerald-400 font-semibold">-docs</span>
               </span>
             </Link>
-<p className="text-sm leading-relaxed text-slate-300">
+            <p className="text-sm leading-relaxed text-slate-300">
               Reliable Bookkeeping & Back-Office Support for Growing Businesses
             </p>
             <p className="text-sm leading-relaxed text-slate-300">
-              IQ-docs helps local and growing businesses in Houston and beyond keep their financial records organized, accurate, and up to date. From bookkeeping and document management to administrative support, we provide dependable, approachable solutions that give business owners more time to focus on what they do best.
+              IQ-docs helps local and growing businesses in Houston and beyond
+              keep their financial records organized, accurate, and up to date.
+              From bookkeeping and document management to administrative
+              support, we provide dependable, approachable solutions that give
+              business owners more time to focus on what they do best.
             </p>
             <div className="flex flex-col space-y-1 text-xs text-slate-400 bg-slate-800/60 p-3 rounded-lg border border-slate-700">
               <p className="text-slate-200 font-semibold flex items-center gap-1">
@@ -53,7 +57,10 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               {serviceLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="hover:text-emerald-400 transition-colors duration-150 flex items-center group">
+                  <Link
+                    href={link.href}
+                    className="hover:text-emerald-400 transition-colors duration-150 flex items-center group"
+                  >
                     <span>{link.label}</span>
                     <ArrowUpRight className="h-3.5 w-3.5 opacity-0 group-hover:opacity-100 transition-all duration-150 ml-1 translate-y-0.5" />
                   </Link>
@@ -69,7 +76,10 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               {differentiators.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="hover:text-emerald-400 transition-colors duration-150 text-left">
+                  <Link
+                    href={link.href}
+                    className="hover:text-emerald-400 transition-colors duration-150 text-left"
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -81,8 +91,11 @@ export default function Footer() {
             <h3 className="text-sm font-semibold tracking-wider text-white uppercase mb-6 font-mono">
               Contact Us
             </h3>
-<div className="space-y-3.5 text-sm">
-              <a href="mailto:info@iq-docs.com" className="flex items-center space-x-2.5 hover:text-emerald-400 transition-colors">
+            <div className="space-y-3.5 text-sm">
+              <a
+                href="mailto:info@iq-docs.com"
+                className="flex items-center space-x-2.5 hover:text-emerald-400 transition-colors"
+              >
                 <Mail className="h-4 w-4 shrink-0 text-emerald-400" />
                 <span>info@iq-docs.com</span>
               </a>
@@ -90,7 +103,9 @@ export default function Footer() {
                 <Clock className="h-4 w-4 shrink-0 text-emerald-400 mt-0.5" />
                 <div>
                   <p className="text-slate-200">Business Hours</p>
-                  <p className="text-xs text-slate-400">Monday-Friday 6:00 AM - 6:00 PM (Central Time)</p>
+                  <p className="text-xs text-slate-400">
+                    Monday-Friday 6:00 AM - 6:00 PM (Central Time)
+                  </p>
                 </div>
               </div>
             </div>
@@ -98,24 +113,52 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 p-4 bg-slate-950 rounded-xl border border-slate-800 text-xs text-slate-400 space-y-2 leading-relaxed">
-          <p className="font-semibold text-slate-300 uppercase tracking-wider font-mono">Legal Disclaimer</p>
+          <p className="font-semibold text-slate-300 uppercase tracking-wider font-mono">
+            Legal Disclaimer
+          </p>
           <p>
-            IQ-docs provides bookkeeping support, document management, and administrative services for businesses utilizing U.S.-based financial institutions and U.S. dollar (USD) accounts. IQ-docs is not a Certified Public Accounting (CPA) firm and does not provide licensed public accounting services, including audits, attestations, examinations, reviews, certifications, or any other services requiring CPA licensure.          </p>
+            IQ-docs provides bookkeeping support, document management, and
+            administrative services for businesses utilizing U.S.-based
+            financial institutions and U.S. dollar (USD) accounts. IQ-docs is
+            not a Certified Public Accounting (CPA) firm and does not provide
+            licensed public accounting services, including audits, attestations,
+            examinations, reviews, certifications, or any other services
+            requiring CPA licensure.{" "}
+          </p>
           <p>
-            Our services are designed to support your everyday bookkeeping and administrative operations and are not a replacement for professional accounting, tax, financial, or legal advice. IQ-docs is not affiliated with or governed by the American Institute of Certified Public Accountants (AICPA).
+            Our services are designed to support your everyday bookkeeping and
+            administrative operations and are not a replacement for professional
+            accounting, tax, financial, or legal advice. IQ-docs is not
+            affiliated with or governed by the American Institute of Certified
+            Public Accountants (AICPA).
           </p>
         </div>
 
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs space-y-4 md:space-y-0">
-<p className="text-slate-500">
+          <p className="text-slate-500">
             &copy; {currentYear} IQ-docs | Houston, Texas | iq-docs.com
           </p>
           <div className="flex items-center space-x-6 text-slate-500">
-            <Link href="/why-IQ-docs" className="hover:text-slate-400 transition-colors">Privacy Policy</Link>
+            <Link
+              href="/why-IQ-docs"
+              className="hover:text-slate-400 transition-colors"
+            >
+              Privacy Policy
+            </Link>
             <span>&bull;</span>
-            <Link href="/services" className="hover:text-slate-400 transition-colors">Service Terms</Link>
+            <Link
+              href="/services"
+              className="hover:text-slate-400 transition-colors"
+            >
+              Service Terms
+            </Link>
             <span>&bull;</span>
-            <Link href="/contact" className="hover:text-slate-400 transition-colors">Client Portal</Link>
+            <Link
+              href="/contact"
+              className="hover:text-slate-400 transition-colors"
+            >
+              Client Portal
+            </Link>
           </div>
         </div>
       </div>
