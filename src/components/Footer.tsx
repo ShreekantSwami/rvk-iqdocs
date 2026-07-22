@@ -32,14 +32,17 @@ export default function Footer() {
               </span>
             </Link>
 <p className="text-sm leading-relaxed text-slate-300">
-              We help local, growing businesses in Houston and beyond get their books caught up, cleaned up, and kept organized. Friendly, down-to-earth support so you can focus on what you do best.
+              Reliable Bookkeeping & Back-Office Support for Growing Businesses
+            </p>
+            <p className="text-sm leading-relaxed text-slate-300">
+              IQ-docs helps local and growing businesses in Houston and beyond keep their financial records organized, accurate, and up to date. From bookkeeping and document management to administrative support, we provide dependable, approachable solutions that give business owners more time to focus on what they do best.
             </p>
             <div className="flex flex-col space-y-1 text-xs text-slate-400 bg-slate-800/60 p-3 rounded-lg border border-slate-700">
               <p className="text-slate-200 font-semibold flex items-center gap-1">
                 <ShieldCheck className="h-4 w-4 text-emerald-400 shrink-0" />
                 Based in Houston, Texas
               </p>
-              <p>Serving local businesses nationwide</p>
+              <p>Supporting local businesses and clients nationwide</p>
             </div>
           </div>
 
@@ -97,7 +100,9 @@ export default function Footer() {
         <div className="mt-8 p-4 bg-slate-950 rounded-xl border border-slate-800 text-xs text-slate-400 space-y-2 leading-relaxed">
           <p className="font-semibold text-slate-300 uppercase tracking-wider font-mono">Legal Disclaimer</p>
           <p>
-            IQ-docs provides bookkeeping support, document management, and administrative services for businesses using U.S.-based financial institutions and U.S. dollar (USD) accounts. IQ-docs is not a Certified Public Accounting (CPA) firm and does not provide licensed public accounting services, including audits, attestations, examinations, reviews, certifications, or other services requiring CPA licensure. Our services are intended to support your day-to-day bookkeeping and administrative operations and should not be relied upon as a substitute for professional accounting, tax, or legal advice. IQ-docs is not affiliated with or governed by the American Institute of Certified Public Accountants (AICPA).
+            IQ-docs provides bookkeeping support, document management, and administrative services for businesses utilizing U.S.-based financial institutions and U.S. dollar (USD) accounts. IQ-docs is not a Certified Public Accounting (CPA) firm and does not provide licensed public accounting services, including audits, attestations, examinations, reviews, certifications, or any other services requiring CPA licensure.          </p>
+          <p>
+            Our services are designed to support your everyday bookkeeping and administrative operations and are not a replacement for professional accounting, tax, financial, or legal advice. IQ-docs is not affiliated with or governed by the American Institute of Certified Public Accountants (AICPA).
           </p>
         </div>
 
