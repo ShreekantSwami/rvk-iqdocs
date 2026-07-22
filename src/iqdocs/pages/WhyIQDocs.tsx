@@ -105,7 +105,7 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
                 <span>Local Service. National Standards.</span>
               </div>
               <h2 className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
-                Personalized support with the systems, organization, and professionalism businesses expect.
+                Trusted Professionals Keeping Your Business Organized
               </h2>
               <p className="text-sm leading-relaxed text-slate-300">
                 At IQ-docs, we believe exceptional bookkeeping is built on experience, accuracy, communication, and genuine care. Our team of skilled bookkeeping and administrative professionals helps small businesses stay organized by maintaining accurate transactions, managing receipts, and creating streamlined digital records—so you can focus on running your business with confidence.
@@ -160,16 +160,19 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
       </section>
 
       {/* 4. CTA */}
-      <section className="py-20 bg-white border-t border-slate-100 text-center">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+      <section className="py-20 bg-slate-50 border-t border-slate-100 relative">
+        <div className="mx-auto max-w-5xl px-6 lg:px-8 text-center relative">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-            Want to learn more about how we help?
+            Let's Make Bookkeeping Simple Again
           </h2>
-          <p className="mt-4 text-sm text-slate-600 max-w-2xl mx-auto">
-            Get in touch for a friendly, pressure-free chat. We will look at your current paperwork setups and show you how easy it is to have clean, worry-free books.
+          <p className="mt-4 text-base text-slate-600 max-w-2xl mx-auto">
+            Get in touch for a friendly, pressure-free chat. We will look at
+            your current paperwork setups and customize a simple bookkeeping
+            flow that fits your business perfectly.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
             <button
+              type="button"
               onClick={() => onNavigate('/contact')}
               className="flex items-center justify-center space-x-2 rounded-full bg-slate-900 hover:bg-slate-800 px-8 py-4 text-sm font-semibold text-white transition-colors cursor-pointer shadow-sm"
             >
@@ -177,10 +180,11 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
               <ArrowRight className="h-4 w-4 text-emerald-400" />
             </button>
             <button
+              type="button"
               onClick={() => onNavigate('/services')}
-              className="flex items-center justify-center space-x-2 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200 px-8 py-4 text-sm font-semibold text-slate-700 transition-colors cursor-pointer"
+              className="flex items-center justify-center space-x-2 rounded-full bg-white hover:bg-slate-50 border border-slate-200 px-8 py-4 text-sm font-semibold text-slate-700 transition-colors cursor-pointer"
             >
-              <span>See Our Services</span>
+              <span>Explore Our Services</span>
             </button>
           </div>
         </div>

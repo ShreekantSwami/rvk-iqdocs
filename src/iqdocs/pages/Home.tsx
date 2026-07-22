@@ -294,31 +294,31 @@ export default function Home({ onNavigate }: HomeProps) {
       </section>
 
       {/* 5. CTA SECTION */}
-      <section className="bg-slate-950 text-white py-20 relative overflow-hidden">
-        {/* Subtle glowing backgrounds */}
-        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 h-[32rem] w-[32rem] bg-emerald-500/10 blur-3xl rounded-full" />
-        <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/3 h-[24rem] w-[24rem] bg-teal-500/10 blur-3xl rounded-full" />
-
-        <div className="mx-auto max-w-5xl px-6 lg:px-8 relative text-center">
-          <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight">
-            Let's Simplify Your Business.
+      <section className="py-20 bg-slate-50 border-t border-slate-100 relative">
+        <div className="mx-auto max-w-5xl px-6 lg:px-8 text-center relative">
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            Let's Make Bookkeeping Simple Again
           </h2>
-          <p className="mt-4 text-base text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Let us take care of the paperwork, organizing, and daily ledger entries so you can focus on your business. Friendly, honest, and dedicated Houston support.
+          <p className="mt-4 text-base text-slate-600 max-w-2xl mx-auto">
+            Get in touch for a friendly, pressure-free chat. We will look at
+            your current paperwork setups and customize a simple bookkeeping
+            flow that fits your business perfectly.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
             <button
+              type="button"
               onClick={() => onNavigate('/contact')}
-              className="flex items-center justify-center space-x-2 rounded-full bg-slate-900 hover:bg-slate-800 px-8 py-4 text-sm font-semibold text-white border border-slate-800 transition-colors shadow-lg cursor-pointer"
+              className="flex items-center justify-center space-x-2 rounded-full bg-slate-900 hover:bg-slate-800 px-8 py-4 text-sm font-semibold text-white transition-colors cursor-pointer shadow-sm"
             >
               <span>Book Your Free Consultation</span>
-              <ArrowRight className="h-4.5 w-4.5 text-emerald-400" />
+              <ArrowRight className="h-4 w-4 text-emerald-400" />
             </button>
             <button
+              type="button"
               onClick={() => onNavigate('/why-IQ-docs')}
-              className="flex items-center justify-center space-x-2 rounded-full bg-white hover:bg-slate-100 text-slate-900 px-8 py-4 text-sm font-semibold transition-colors cursor-pointer"
+              className="flex items-center justify-center space-x-2 rounded-full bg-white hover:bg-slate-50 border border-slate-200 px-8 py-4 text-sm font-semibold text-slate-700 transition-colors cursor-pointer"
             >
-              <span>Why IQ-docs</span>
+              <span>Explore Our Services</span>
             </button>
           </div>
         </div>

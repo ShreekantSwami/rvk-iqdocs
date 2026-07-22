@@ -112,6 +112,15 @@ export default function BooksCleanup({ onNavigate }: BooksCleanupProps) {
 <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-slate-300 max-w-3xl">
               No matter how far behind your books may be, IQ-docs has the expertise to clean up complex accounts, resolve backlogs, and deliver accurate, organized records ready for a seamless CPA handoff.
             </p>
+            <div className="mt-8">
+              <button
+                onClick={() => document.getElementById('cta-section')?.scrollIntoView({ behavior: 'smooth' })}
+                className="group inline-flex items-center justify-center space-x-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 px-8 py-4 text-sm font-semibold text-white transition-all duration-300 cursor-pointer shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 hover:-translate-y-0.5"
+              >
+                <span>Learn More</span>
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -219,17 +228,6 @@ export default function BooksCleanup({ onNavigate }: BooksCleanupProps) {
             ))}
           </div>
 
-          <div className="mt-16 bg-slate-900 text-slate-300 rounded-2xl border border-slate-800 p-8 max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center space-x-4">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-slate-800 text-emerald-400">
-                <Database className="h-5 w-5" />
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-white">Need to hand over clean records to your CPA?</h4>
-                <p className="text-xs text-slate-400 leading-relaxed mt-0.5">We organize and prepare your historical records so your chosen tax professional can file with ease.</p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -283,21 +281,31 @@ export default function BooksCleanup({ onNavigate }: BooksCleanupProps) {
       </section>
 
       {/* 6. CTA BOTTOM */}
-      <section className="py-20 bg-emerald-50 border-t border-emerald-100 text-center">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+      <section id="cta-section" className="py-20 bg-slate-50 border-t border-slate-100 relative">
+        <div className="mx-auto max-w-5xl px-6 lg:px-8 text-center relative">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-            Let's Simplify Your Business.
+            Let's Make Bookkeeping Simple Again
           </h2>
-          <p className="mt-4 text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Stop worrying about overdue accounts or messy receipts. Let our friendly cleanup team do the heavy lifting so you can focus on running your business.
+          <p className="mt-4 text-base text-slate-600 max-w-2xl mx-auto">
+            Get in touch for a friendly, pressure-free chat. We will look at
+            your current paperwork setups and customize a simple bookkeeping
+            flow that fits your business perfectly.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
             <button
+              type="button"
               onClick={() => onNavigate('/contact')}
-              className="inline-flex items-center justify-center space-x-2 rounded-full bg-slate-900 hover:bg-slate-800 px-8 py-4 text-sm font-semibold text-white transition-colors cursor-pointer shadow-sm"
+              className="flex items-center justify-center space-x-2 rounded-full bg-slate-900 hover:bg-slate-800 px-8 py-4 text-sm font-semibold text-white transition-colors cursor-pointer shadow-sm"
             >
-              <span>Get Your Personalized Cleanup Quote</span>
+              <span>Book Your Free Consultation</span>
               <ArrowRight className="h-4 w-4 text-emerald-400" />
+            </button>
+            <button
+              type="button"
+              onClick={() => onNavigate('/why-IQ-docs')}
+              className="flex items-center justify-center space-x-2 rounded-full bg-white hover:bg-slate-50 border border-slate-200 px-8 py-4 text-sm font-semibold text-slate-700 transition-colors cursor-pointer"
+            >
+              <span>Explore Our Services</span>
             </button>
           </div>
         </div>
