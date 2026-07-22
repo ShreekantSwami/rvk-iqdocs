@@ -22,16 +22,15 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/80 backdrop-blur-md overflow-hidden">
-      <div className="bg-slate-900 text-slate-300 text-[11px] font-medium py-1.5 px-6 lg:px-8 flex justify-between items-center border-b border-slate-800">
+<div className="bg-slate-900 text-slate-300 text-[11px] font-medium py-1.5 px-6 lg:px-8 flex justify-between items-center border-b border-slate-800">
         <div className="flex items-center space-x-4">
-          <span>Scottsdale, Arizona</span>
-          <span className="hidden sm:inline">Mon-Fri 7:00 AM - 7:00 PM (Arizona Time)</span>
+          <span>Houston, Texas</span>
+          <span className="hidden sm:inline">Mon-Fri 6:00 AM - 6:00 PM (Central Time)</span>
         </div>
         <div className="flex items-center space-x-4">
           <a href="mailto:info@iq-docs.com" className="hover:text-white transition-colors">
             info@iq-docs.com
           </a>
-          <span className="font-semibold text-emerald-400">(000) 000-0000</span>
         </div>
       </div>
 

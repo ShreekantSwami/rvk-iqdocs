@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     default: 'IQ-docs',
     template: '%s | IQ-docs',
   },
-  description: 'IQ-docs bookkeeping and back-office support for Scottsdale businesses.',
+  description: 'IQ-docs bookkeeping and back-office support for Houston businesses.',
 };
 
 export default function RootLayout({

@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { RoutePath } from '../types';
 import { 
-  Phone, Mail, Clock, HelpCircle, ChevronDown, Check, 
+  Mail, Clock, HelpCircle, ChevronDown, Check, 
   ArrowRight, ShieldCheck, RefreshCw, Send, MapPin 
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -55,7 +55,7 @@ export default function Contact({ onNavigate }: ContactProps) {
     {
       id: 'c-faq-1',
       question: 'What happens after I request a consultation?',
-      answer: 'A friendly member of our Scottsdale team will reach out to you within a few business hours. We will schedule a short, pressure-free chat to learn about your business and see how we can help.'
+      answer: 'A friendly member of our Houston team will reach out to you within a few business hours. We will schedule a short, pressure-free chat to learn about your business and see how we can help.'
     },
     {
       id: 'c-faq-2',
@@ -73,25 +73,25 @@ export default function Contact({ onNavigate }: ContactProps) {
     <div className="bg-white">
       
       {/* 1. HERO HEADER */}
-      <section className="relative overflow-hidden bg-slate-50 py-20 border-b border-slate-100">
+      <section className="relative overflow-hidden bg-slate-50 py-16 sm:py-20 md:py-16 md:py-24 lg:py-32 border-b border-slate-100">
         <div className="absolute inset-0 bg-[radial-gradient(40rem_40rem_at_top,var(--color-emerald-50),transparent)] opacity-60" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-800 border border-slate-200 mb-6">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs font-semibold text-slate-800 border border-slate-200 mb-4 sm:mb-6">
               Contact Us
             </span>
-            <h1 className="font-display text-4xl font-extrabold tracking-tight sm:text-6xl text-slate-900 leading-tight">
-              Let's Simplify Your Business.
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+              Ready to Simplify Your Business Operations?
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-slate-600">
-              Whether your bookkeeping is several months behind, your receipts are a mess, or you just need a friendly helper to keep you organized going forward, we are here to support you.
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-slate-600">
+              Discover how IQ-docs can help you create cleaner records, organized systems, and stress-free bookkeeping support. Schedule a friendly, no-pressure consultation where we'll review your current processes and show you how simple it can be to maintain accurate, well-organized books.
             </p>
           </div>
         </div>
       </section>
 
       {/* 2. FORM & INFO SECTION */}
-      <section className="py-24 bg-white relative">
+      <section className="py-16 md:py-24 bg-white relative">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             
@@ -118,20 +118,8 @@ export default function Contact({ onNavigate }: ContactProps) {
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-slate-400 uppercase font-mono tracking-wider">Location</h4>
-                    <p className="mt-1.5 text-base font-bold text-slate-900">Scottsdale, Arizona</p>
+                    <p className="mt-1.5 text-base font-bold text-slate-900">Houston, Texas</p>
                     <p className="text-xs text-slate-500 mt-0.5">Serving growing local businesses nationwide</p>
-                  </div>
-                </div>
-
-                {/* Phone Card */}
-                <div className="flex items-start space-x-4 bg-slate-50/50 p-6 rounded-2xl border border-slate-100">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-white">
-                    <Phone className="h-5 w-5 text-emerald-400" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-400 uppercase font-mono tracking-wider">Phone Support</h4>
-                    <p className="mt-1.5 text-base font-bold text-slate-900">(000) 000-0000</p>
-                    <p className="text-xs text-slate-500 mt-0.5">Call us anytime during business hours</p>
                   </div>
                 </div>
 
@@ -154,7 +142,7 @@ export default function Contact({ onNavigate }: ContactProps) {
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-slate-400 uppercase font-mono tracking-wider font-mono">Business Hours</h4>
-                    <p className="mt-1.5 text-sm font-bold text-slate-900">Monday–Friday 7:00 AM – 7:00 PM (Arizona time)</p>
+                    <p className="mt-1.5 text-sm font-bold text-slate-900">Monday–Friday 6:00 AM – 6:00 PM (Central Time)</p>
                     <p className="text-xs text-slate-500 mt-0.5">Dedicated local coverage</p>
                   </div>
                 </div>
@@ -320,7 +308,7 @@ export default function Contact({ onNavigate }: ContactProps) {
                       </div>
                       <h3 className="font-display text-2xl font-extrabold text-slate-900">Request Sent!</h3>
                       <p className="mt-3 text-sm text-slate-500 leading-relaxed max-w-md mx-auto">
-                        Thanks, <span className="font-semibold text-slate-800">{formData.fullName}</span>. We have received your request, and a friendly member of our Scottsdale team will get back to you at <span className="font-semibold text-slate-800">{formData.email}</span> within one business day.
+                        Thanks, <span className="font-semibold text-slate-800">{formData.fullName}</span>. We have received your request, and a friendly member of our Houston team will get back to you at <span className="font-semibold text-slate-800">{formData.email}</span> within one business day.
                       </p>
                       
                       <button
@@ -344,10 +332,10 @@ export default function Contact({ onNavigate }: ContactProps) {
       </section>
 
       {/* 3. QUICK FAQs ACCORDION */}
-      <section className="py-24 bg-slate-50 border-t border-slate-100">
+      <section className="py-16 md:py-24 bg-slate-50 border-t border-slate-100">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
               Frequently Asked Questions
             </h2>
           </div>

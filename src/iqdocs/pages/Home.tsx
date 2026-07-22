@@ -34,7 +34,7 @@ export default function Home({ onNavigate }: HomeProps) {
   return (
     <div className="bg-white">
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden bg-linear-to-b from-slate-50 to-white pt-20 pb-28 md:pt-28 md:pb-36 border-b border-slate-100">
+      <section className="relative overflow-hidden bg-linear-to-b from-slate-50 to-white pt-16 sm:pt-20 md:pt-28 pb-20 sm:pb-24 md:pb-36 border-b border-slate-100">
         {/* Subtle decorative grid/glow backdrops */}
         <div className="absolute inset-0 bg-[radial-gradient(45rem_50rem_at_top,var(--color-emerald-50),transparent)] opacity-40" />
         <div className="absolute top-1/2 left-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 bg-emerald-100/30 blur-3xl rounded-full" />
@@ -47,10 +47,10 @@ export default function Home({ onNavigate }: HomeProps) {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-1.5 rounded-full bg-slate-50 px-3.5 py-1 text-xs font-semibold text-slate-700 border border-slate-200/80 mb-6 text-center"
+              className="inline-flex items-center gap-1.5 rounded-full bg-slate-50 px-3 py-1 text-[10px] sm:text-xs font-semibold text-slate-700 border border-slate-200/80 mb-4 sm:mb-6 text-center"
             >
               <Sparkles className="h-3.5 w-3.5 text-emerald-500 animate-pulse" />
-              <span>Scottsdale, AZ &bull; QuickBooks Online Specialists</span>
+              <span>Houston, TX &bull; QuickBooks Online Specialists</span>
             </motion.div>
 
             {/* Main Headline */}
@@ -58,12 +58,9 @@ export default function Home({ onNavigate }: HomeProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.6 }}
-              className="font-display text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl md:text-6xl max-w-3xl mx-auto leading-tight"
+              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-950 max-w-3xl mx-auto leading-tight"
             >
-              Your Business Deserves Better Than Disorganized Books.<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-950 to-slate-700">
-                We Bring Order to Your Business.
-              </span>
+              Helping businesses save time, stay compliant, and make smarter financial decisions.
             </motion.h1>
 
             {/* Subtitle */}
@@ -71,9 +68,9 @@ export default function Home({ onNavigate }: HomeProps) {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="mt-6 text-base md:text-lg leading-relaxed text-slate-600 max-w-2xl mx-auto"
+              className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-slate-600 max-w-2xl mx-auto"
             >
-              We untangle overdue books, organize your receipts, and manage daily back-office tasks so you can stop worrying about paperwork and focus on growing your business.
+              Behind on your bookkeeping? We'll get your books back on track, organize your paperwork, and take care of your back-office administration&mdash;so you can get back to running your business with confidence.
             </motion.p>
 
             {/* CTA Group */}
@@ -102,7 +99,7 @@ export default function Home({ onNavigate }: HomeProps) {
       </section>
 
       {/* 2. SERVICES OVERVIEW */}
-      <section className="py-24 bg-white border-t border-slate-50 relative">
+      <section className="py-16 md:py-24 bg-white border-t border-slate-50 relative">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-16">
             <h2 className="text-xs font-bold tracking-wider text-slate-600 uppercase font-mono">
@@ -218,7 +215,7 @@ export default function Home({ onNavigate }: HomeProps) {
       </section>
 
       {/* 3. STEP-BY-STEP ONBOARDING */}
-      <section className="py-24 bg-slate-50 border-t border-slate-100 relative">
+      <section className="py-16 md:py-24 bg-slate-50 border-t border-slate-100 relative">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-16">
             <h2 className="text-xs font-bold tracking-wider text-slate-600 uppercase font-mono">
@@ -307,7 +304,7 @@ export default function Home({ onNavigate }: HomeProps) {
             Let's Simplify Your Business.
           </h2>
           <p className="mt-4 text-base text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Let us take care of the paperwork, organizing, and daily ledger entries so you can focus on your business. Friendly, honest, and dedicated Scottsdale support.
+            Let us take care of the paperwork, organizing, and daily ledger entries so you can focus on your business. Friendly, honest, and dedicated Houston support.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
             <button

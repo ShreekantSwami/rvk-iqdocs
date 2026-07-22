@@ -17,29 +17,29 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
     <div className="bg-white">
       
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden bg-slate-50 py-24 md:py-32 border-b border-slate-100">
+      <section className="relative overflow-hidden bg-slate-50 py-16 sm:py-20 md:py-16 md:py-24 lg:py-32 border-b border-slate-100">
         <div className="absolute inset-0 bg-[radial-gradient(40rem_40rem_at_top,var(--color-emerald-50),transparent)] opacity-60" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-800 border border-slate-200 mb-6">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 sm:px-3.5 sm:py-1.5 text-[10px] sm:text-xs font-semibold text-slate-800 border border-slate-200 mb-4 sm:mb-6">
               Our Story & Values
             </span>
-            <h1 className="font-display text-4xl font-extrabold tracking-tight sm:text-6xl text-slate-900">
-              Down-to-Earth Help for Local Businesses
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900">
+              Down-to-Earth Help for Locums, Healthcare, Professionals, IT, Small Business & Individuals
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-slate-600 max-w-2xl mx-auto">
-              Our service is built on integrity, simple communication, and genuine care. We help Scottsdale businesses get their books cleaned up and kept organized without any complicated jargon.
+<p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-slate-600 max-w-2xl mx-auto">
+              Our service is built on integrity, simple communication, and genuine care. We help Houston businesses get their books cleaned up and kept organized without any complicated jargon.
             </p>
           </div>
         </div>
       </section>
 
       {/* 2. THE THREE PILLARS */}
-      <section className="py-24 bg-white relative">
+      <section className="py-16 md:py-24 bg-white relative">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-16">
             <h2 className="text-xs font-bold tracking-wider text-slate-600 uppercase font-mono">
-              The IQ-docs Difference
+              Why Businesses Choose IQ-docs
             </h2>
             <p className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
               More Than a Service. A Trusted Business Partner.
@@ -47,7 +47,7 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            
+
             {/* Pillar 1 */}
             <div className="bg-slate-50/50 rounded-2xl border border-slate-100 p-8 hover:border-slate-200 hover:bg-white hover:shadow-md transition-all group">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-900 text-white mb-6 group-hover:scale-105 transition-transform">
@@ -57,7 +57,7 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
                 Accuracy You Can Trust
               </h3>
               <p className="text-sm leading-relaxed text-slate-600">
-                We double-check your ledger entries against corresponding receipts and statements. Every transaction is matched carefully so your historical and monthly records are 100% accurate, balanced, and tax-ready.
+                Detailed, organized bookkeeping practices designed to keep your records reliable and current.
               </p>
             </div>
 
@@ -70,7 +70,7 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
                 Personalized Service
               </h3>
               <p className="text-sm leading-relaxed text-slate-600">
-                You will work with a dedicated, friendly bookkeeping and administrative helper who knows your business by name. No robotic tickets or offshore call centers—just real, direct, local support.
+                Solutions tailored to your business needs, workflow, and goals.
               </p>
             </div>
 
@@ -83,7 +83,7 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
                 Responsive Communication
               </h3>
               <p className="text-sm leading-relaxed text-slate-600">
-                We value your time. We answer emails and phone calls promptly, explaining your numbers in plain English without confusing accounting jargon or corporate noise.
+                Clear, timely support from a team that values strong client relationships.
               </p>
             </div>
 
@@ -92,29 +92,29 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
       </section>
 
       {/* 3. LOCAL SERVICE. NATIONAL STANDARDS. */}
-      <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-slate-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(40rem_40rem_at_bottom_left,rgba(43,20,0,0.4),transparent)]" />
         <div className="absolute top-1/4 right-1/4 h-[30rem] w-[30rem] bg-emerald-500/5 blur-3xl rounded-full" />
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
+
             <div className="space-y-6">
               <div className="inline-flex items-center space-x-2 bg-slate-800 px-3.5 py-1.5 rounded-lg border border-slate-700 text-xs font-mono font-bold text-emerald-400">
                 <MapPin className="h-4 w-4 shrink-0" />
                 <span>Local Service. National Standards.</span>
               </div>
               <h2 className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
-                Friendly Professionals Keeping Your Business Organized
+                Personalized support with the systems, organization, and professionalism businesses expect.
               </h2>
               <p className="text-sm leading-relaxed text-slate-300">
-                We believe that getting your bookkeeping done right takes real experience, clear communication, and genuine care. Our team of seasoned bookkeeping and office administrative specialists is dedicated to organizing your transactions, labeling your receipts, and keeping your files clean so you can sleep easy.
+                At IQ-docs, we believe exceptional bookkeeping is built on experience, accuracy, communication, and genuine care. Our team of skilled bookkeeping and administrative professionals helps small businesses stay organized by maintaining accurate transactions, managing receipts, and creating streamlined digital records—so you can focus on running your business with confidence.
               </p>
               <div className="space-y-4 pt-4 border-t border-slate-800">
                 {[
-                  { title: 'Experienced Bookkeeping Team', text: 'Our team includes highly experienced, friendly bookkeepers who are passionate about helping local small businesses succeed.' },
-                  { title: 'Organized Cloud Folders', text: 'We utilize private, secure cloud folder structures to organize and label all your digital business receipts and documentation.' },
-                  { title: 'Fully Insured For Peace Of Mind', text: 'We carry comprehensive business liability coverage so you can feel completely secure partnering with us.' }
+                  { title: 'Experienced Bookkeeping Professionals', text: 'Our knowledgeable and approachable team provides dependable bookkeeping support tailored to the needs of local small businesses. We combine attention to detail with personalized service to help keep your financial records accurate and up to date.' },
+                  { title: 'Secure Digital Organization', text: 'We create structured, private cloud-based filing systems to organize your receipts, financial documents, and business records, making important information easy to access when you need it.' },
+                  { title: 'Fully Insured for Added Confidence', text: 'Your trust matters. IQ-docs maintains comprehensive business liability coverage, providing added reassurance when you partner with us for your bookkeeping and back-office needs.' }
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-start space-x-3.5">
                     <CheckCircle2 className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
@@ -132,14 +132,14 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
               <h3 className="font-display text-lg font-bold text-slate-100 border-b border-slate-800 pb-4">
                 Our Service Standards
               </h3>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[
-                  { label: 'BOOKKEEPING METHOD', val: 'Double-Entry Reconciling' },
-                  { label: 'SUPPORT REGION', val: 'Scottsdale, Arizona Local' },
-                  { label: 'LIABILITY COVERAGE', val: '$2M Insured' },
-                  { label: 'SOFTWARE INTEGRATIONS', val: 'QuickBooks Online / Xero' },
-                  { label: 'ONBOARDING TIMING', val: '5-7 Business Days' },
-                  { label: 'BUSINESS HOURS', val: '7:00 AM – 7:00 PM AZ' }
+                  { label: 'Bookkeeping Method', val: 'Double-Entry Reconciliation' },
+                  { label: 'Service Area', val: 'Houston, Texas & Surrounding Areas' },
+                  { label: 'Liability Coverage', val: '$2M Business Insurance Coverage' },
+                  { label: 'Software Integrations', val: 'QuickBooks Online & Xero' },
+                  { label: 'Client Onboarding', val: '5-7 Business Days' },
+                  { label: 'BUSINESS HOURS', val: '6:00 AM - 6:00 PM CT' }
                 ].map((stat, i) => (
                   <div key={i} className="space-y-1">
                     <div className="text-[10px] font-mono tracking-wider text-slate-500 uppercase">{stat.label}</div>
@@ -148,7 +148,10 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
                 ))}
               </div>
               <div className="p-4 bg-slate-900/60 rounded-xl border border-slate-800 text-xs text-slate-400 leading-relaxed">
-                By choosing IQ-docs, you get a reliable, friendly back-office support system. No corporate jargon, no surprise bills—just real help to get your records organized and kept up-to-date.
+                <p className="font-bold text-slate-200 text-base mb-2">
+                  Reliable Support Without the Complexity
+                </p>
+                With IQ-docs, you gain a dependable back-office partner dedicated to keeping your business organized and your records current. No unnecessary complexity, no confusing processes—just professional, responsive support that helps you stay in control of your finances and operations.
               </div>
             </div>
 

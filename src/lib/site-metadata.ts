@@ -2,31 +2,31 @@ import type { Metadata } from 'next';
 
 export const siteMetadata = {
   home: {
-    title: 'IQ-docs | Friendly, Local Scottsdale Bookkeeping Support',
+    title: 'IQ-docs | Helping businesses save time, stay compliant, and make smarter financial decisions',
     description:
-      'Professional bookkeeping and receipt organizing for growing businesses in Scottsdale and beyond. Get messy books caught up and ready for your tax preparer.',
+      'Behind on your bookkeeping? We\'ll get your books back on track, organize your paperwork, and take care of your back-office administration—so you can get back to running your business with confidence.',
   },
   services: {
-    title: 'Our Bookkeeping Services | Scottsdale, Arizona - IQ-docs',
+    title: 'Premium Bookkeeping & Business Support | Houston, Texas - IQ-docs',
     description:
-      'Friendly bookkeeping, digital receipt filing, and everyday administrative help built for growing local businesses.',
+      'Simplify your operations with professional bookkeeping and dedicated back-office support tailored to your business. We keep your accounts accurate, your records organized, and your day-to-day administration running seamlessly.',
   },
   why: {
-    title: 'Our Story & Core Values | IQ-docs Scottsdale',
+    title: 'Our Story & Core Values | IQ-docs Houston',
     description:
-      'Learn how IQ-docs helps local businesses with friendly, accurate bookkeeping, organized cloud folders, and clear reports.',
+      'Learn how IQ-docs helps Houston businesses with friendly, accurate bookkeeping, organized cloud folders, and clear reports.',
   },
   cleanup: {
-    title: 'Overdue Books Cleanup | Backlog Solutions - IQ-docs',
+    title: 'QuickBooks Online Cleanup & Catch-Up | IQ-docs Houston',
     description:
-      'Untangle years of overdue bookkeeping, unorganized receipts, and bank errors. We get your books clean and ready for your CPA.',
+      'No matter how far behind your books may be, IQ-docs has the expertise to clean up complex accounts, resolve backlogs, and deliver accurate, organized records ready for a seamless CPA handoff.',
   },
   contact: {
     title: 'Free Consultation | Get in Touch with IQ-docs',
     description:
-      'Schedule a friendly, pressure-free chat with our Scottsdale team today to get your business bookkeeping back on track.',
+      'Schedule a friendly, pressure-free chat with our Houston team today to get your business bookkeeping back on track.',
   },
 } satisfies Record<string, Metadata>;
 
 export const siteKeywords =
-  'bookkeeping, tax preparation, ledger reconciliation, financial restoration, IQ-docs, QuickBooks cleanup, executive admin, family office support';
+  'bookkeeping, tax preparation, ledger reconciliation, financial restoration, IQ-docs, QuickBooks cleanup, executive admin, family office support, Houston bookkeeping';

@@ -31,13 +31,13 @@ export default function Footer() {
                 IQ<span className="text-emerald-400 font-semibold">-docs</span>
               </span>
             </Link>
-            <p className="text-sm leading-relaxed text-slate-300">
-              We help local, growing businesses in Scottsdale and beyond get their books caught up, cleaned up, and kept organized. Friendly, down-to-earth support so you can focus on what you do best.
+<p className="text-sm leading-relaxed text-slate-300">
+              We help local, growing businesses in Houston and beyond get their books caught up, cleaned up, and kept organized. Friendly, down-to-earth support so you can focus on what you do best.
             </p>
             <div className="flex flex-col space-y-1 text-xs text-slate-400 bg-slate-800/60 p-3 rounded-lg border border-slate-700">
               <p className="text-slate-200 font-semibold flex items-center gap-1">
                 <ShieldCheck className="h-4 w-4 text-emerald-400 shrink-0" />
-                Based in Scottsdale, Arizona
+                Based in Houston, Texas
               </p>
               <p>Serving local businesses nationwide</p>
             </div>
@@ -78,20 +78,16 @@ export default function Footer() {
             <h3 className="text-sm font-semibold tracking-wider text-white uppercase mb-6 font-mono">
               Contact Us
             </h3>
-            <div className="space-y-3.5 text-sm">
+<div className="space-y-3.5 text-sm">
               <a href="mailto:info@iq-docs.com" className="flex items-center space-x-2.5 hover:text-emerald-400 transition-colors">
                 <Mail className="h-4 w-4 shrink-0 text-emerald-400" />
                 <span>info@iq-docs.com</span>
               </a>
-              <div className="flex items-center space-x-2.5">
-                <Phone className="h-4 w-4 shrink-0 text-emerald-400" />
-                <span>(000) 000-0000</span>
-              </div>
               <div className="flex items-start space-x-2.5 leading-relaxed">
                 <Clock className="h-4 w-4 shrink-0 text-emerald-400 mt-0.5" />
                 <div>
                   <p className="text-slate-200">Business Hours</p>
-                  <p className="text-xs text-slate-400">Monday-Friday 7:00 AM - 7:00 PM (Arizona time)</p>
+                  <p className="text-xs text-slate-400">Monday-Friday 6:00 AM - 6:00 PM (Central Time)</p>
                 </div>
               </div>
             </div>
@@ -106,8 +102,8 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs space-y-4 md:space-y-0">
-          <p className="text-slate-500">
-            &copy; {currentYear} IQ-docs | Scottsdale, Arizona | iq-docs.com
+<p className="text-slate-500">
+            &copy; {currentYear} IQ-docs | Houston, Texas | iq-docs.com
           </p>
           <div className="flex items-center space-x-6 text-slate-500">
             <Link href="/why-IQ-docs" className="hover:text-slate-400 transition-colors">Privacy Policy</Link>

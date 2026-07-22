@@ -31,24 +31,24 @@ export default function BooksCleanup({ onNavigate }: BooksCleanupProps) {
 
   const checklistItems = [
     {
-      title: 'Reconciling All Accounts',
-      desc: 'Matching every bank and credit card statement to ensure 100% mathematical accuracy across all business accounts.'
+      title: 'Complete Account Reconciliation',
+      desc: 'We meticulously match every bank and credit card statement to your books, ensuring your financial records are accurate, balanced, and ready for review.'
     },
     {
-      title: 'Transaction Categorization',
-      desc: 'Labeling all deposits, sales, and expenditures into appropriate tax-ready chart of accounts categories.'
+      title: 'Smart Transaction Cleanup',
+      desc: 'We organize and categorize every deposit, sale, and expense into the correct accounts&mdash;creating clean, tax-ready financial records you can rely on.'
     },
     {
-      title: 'Fixing Bank Feed Errors',
-      desc: 'Resolving duplicates, incorrect manual entries, and sync glitches from older software connections.'
+      title: 'Bank Feed Repair & Error Resolution',
+      desc: 'We identify and fix duplicate transactions, incorrect entries, and outdated connection issues to restore accuracy and consistency to your books.'
     },
     {
-      title: 'Reviewing Balances & Ledgers',
-      desc: 'Looking for uncategorized assets, negative balance issues, or miscoded balance sheet items.'
+      title: 'Balance & Ledger Review',
+      desc: 'We dig deeper to uncover hidden discrepancies, uncategorized items, negative balances, and reporting errors&mdash;bringing clarity back to your financials.'
     },
     {
-      title: 'CPA Handoff Pack',
-      desc: 'A complete set of clean financial reports (Profit & Loss, Balance Sheet, Trial Balance) and organized documentation ready for tax filing.'
+      title: 'CPA-Ready Tax Package',
+      desc: 'We prepare a complete set of organized financial reports, including Profit & Loss, Balance Sheet, and Trial Balance, along with supporting documentation for a smooth CPA handoff.'
     }
   ];
 
@@ -97,27 +97,27 @@ export default function BooksCleanup({ onNavigate }: BooksCleanupProps) {
     <div className="bg-white">
       
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden bg-slate-900 text-white py-24 md:py-32">
+      <section className="relative overflow-hidden bg-slate-900 text-white py-16 sm:py-20 md:py-16 md:py-24 lg:py-32">
         <div className="absolute inset-0 bg-[radial-gradient(40rem_40rem_at_top_right,rgba(43,20,0,0.45),transparent)]" />
         <div className="absolute bottom-0 right-1/4 h-[35rem] w-[35rem] bg-teal-500/10 blur-3xl rounded-full" />
         
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-4xl">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-800 px-3.5 py-1.5 text-xs font-semibold text-emerald-400 border border-slate-700/60 mb-6">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-800 px-3 py-1 sm:px-3.5 sm:py-1.5 text-[10px] sm:text-xs font-semibold text-emerald-400 border border-slate-700/60 mb-4 sm:mb-6">
               QuickBooks Online
             </span>
-            <h1 className="font-display text-4xl font-extrabold tracking-tight sm:text-6xl leading-tight">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
               QuickBooks Online Cleanup & Catch-Up
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-slate-300 max-w-3xl">
-              Whether you are a few months behind, a full year, or several fiscal years behind—we specialize in untangling messy accounts, catching up backlog, and preparing your books for a flawless CPA handoff.
+<p className="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-slate-300 max-w-3xl">
+              No matter how far behind your books may be, IQ-docs has the expertise to clean up complex accounts, resolve backlogs, and deliver accurate, organized records ready for a seamless CPA handoff.
             </p>
           </div>
         </div>
       </section>
 
       {/* 2. WHY IT MATTERS SECTION */}
-      <section className="py-24 bg-white relative">
+      <section className="py-16 md:py-24 bg-white relative">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-16">
             <h2 className="text-xs font-bold tracking-wider text-emerald-600 uppercase font-mono">
@@ -150,7 +150,7 @@ export default function BooksCleanup({ onNavigate }: BooksCleanupProps) {
       </section>
 
       {/* 3. CHECKLIST SECTION */}
-      <section className="py-24 bg-slate-50 border-t border-slate-100 relative">
+      <section className="py-16 md:py-24 bg-slate-50 border-t border-slate-100 relative">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
@@ -197,7 +197,7 @@ export default function BooksCleanup({ onNavigate }: BooksCleanupProps) {
       </section>
 
       {/* 4. THE PROTOCOL TIMELINE */}
-      <section className="py-24 bg-white border-t border-slate-100 relative">
+      <section className="py-16 md:py-24 bg-white border-t border-slate-100 relative">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-16">
             <h2 className="text-xs font-bold tracking-wider text-slate-600 uppercase font-mono flex items-center justify-center gap-1.5">
@@ -250,7 +250,7 @@ export default function BooksCleanup({ onNavigate }: BooksCleanupProps) {
       </section>
 
       {/* 5. FAQs ACCORDION */}
-      <section className="py-24 bg-slate-50 border-t border-slate-100">
+      <section className="py-16 md:py-24 bg-slate-50 border-t border-slate-100">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex h-9 items-center justify-center rounded-full bg-white px-4 py-1.5 text-xs font-bold text-slate-900 border border-slate-100 shadow-2xs">
