@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { RoutePath } from "../types";
 
 interface HomeProps {
@@ -40,10 +40,8 @@ export default function Home({ onNavigate }: HomeProps) {
     },
   };
 
-  const [scrollEl, setScrollEl] = useState<HTMLDivElement | null>(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const activeIndexRef = useRef(0);
-  const scrollListenerAttached = useRef(false);
 
   const testimonials = [
     {
@@ -92,59 +90,37 @@ export default function Home({ onNavigate }: HomeProps) {
     ...testimonials,
   ];
 
-  const getCardStep = () => {
-    if (!scrollEl) return 300;
-    const card = scrollEl.querySelector<HTMLElement>(":scope > div");
-    if (!card) return 300;
-    return card.offsetWidth + 24;
+  const getStep = () => {
+    const el = scrollRef.current;
+    if (!el) return 0;
+    const card = el.querySelector<HTMLElement>(":scope > div");
+    return (card?.offsetWidth ?? 300) + 24;
   };
 
-  const getCardCount = () => {
-    if (!scrollEl) return 1;
-    return Math.round(scrollEl.offsetWidth / getCardStep()) || 1;
-  };
-
-  const handleScroll = () => {
-    if (!scrollEl) return;
-    const step = getCardStep();
-    const rawIndex = Math.round(scrollEl.scrollLeft / step);
-    const idx = rawIndex % totalTestimonials;
-    activeIndexRef.current = idx;
-    setActiveIndex(idx);
-
-    const totalCards = loopedTestimonials.length;
-    const atStart = rawIndex < 1;
-    const atEnd = rawIndex >= totalCards - 1;
-    if (atStart || atEnd) {
-      scrollEl.scrollLeft = (idx + totalTestimonials) * step;
-    }
+  const scrollToIndex = (index: number) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const step = getStep();
+    const offset = (index + totalTestimonials) * step;
+    el.scrollTo({ left: offset, behavior: "smooth" });
+    setActiveIndex(index);
   };
 
   const scrollNext = () => {
-    if (!scrollEl) return;
-    const step = getCardStep();
-    const cardsToShow = getCardCount();
-    scrollEl.scrollBy({ left: step * cardsToShow, behavior: "smooth" });
+    scrollToIndex((activeIndex + 1) % totalTestimonials);
   };
 
   const scrollPrev = () => {
-    if (!scrollEl) return;
-    const step = getCardStep();
-    const cardsToShow = getCardCount();
-    scrollEl.scrollBy({ left: -step * cardsToShow, behavior: "smooth" });
+    scrollToIndex((activeIndex - 1 + totalTestimonials) % totalTestimonials);
   };
 
-  const scrollRefCallback = (el: HTMLDivElement | null) => {
-    setScrollEl(el);
-    if (el && !scrollListenerAttached.current) {
-      scrollListenerAttached.current = true;
-      requestAnimationFrame(() => {
-        const step = getCardStep();
-        el.scrollLeft = totalTestimonials * step;
-        el.addEventListener("scroll", handleScroll, { passive: true });
-      });
-    }
-  };
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>(":scope > div");
+    const step = (card?.offsetWidth ?? 300) + 24;
+    el.scrollLeft = testimonials.length * step;
+  }, []);
 
   return (
     <div className="bg-white">
@@ -489,7 +465,7 @@ export default function Home({ onNavigate }: HomeProps) {
 
           <div className="relative">
             <div
-              ref={scrollRefCallback}
+              ref={scrollRef}
               className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4"
               style={{ scrollbarWidth: "none" }}
             >
