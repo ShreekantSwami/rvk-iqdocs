@@ -93,9 +93,10 @@ export default function Contact({ onNavigate: _onNavigate }: ContactProps) {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/contact-us.jpg"
+            src="/contact-us.webp"
             alt=""
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />

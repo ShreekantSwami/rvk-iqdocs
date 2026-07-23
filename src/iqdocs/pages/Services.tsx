@@ -58,9 +58,10 @@ export default function Services({ onNavigate }: ServicesProps) {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/service-representator.jpg"
+            src="/service-representator.webp"
             alt=""
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />

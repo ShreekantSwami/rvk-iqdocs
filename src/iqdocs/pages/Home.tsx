@@ -153,9 +153,10 @@ export default function Home({ onNavigate }: HomeProps) {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/hero.jpg"
+            src="/hero.webp"
             alt=""
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />

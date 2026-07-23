@@ -23,9 +23,10 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/why-iq-docs.jpg"
+            src="/why-iq-docs.webp"
             alt=""
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
