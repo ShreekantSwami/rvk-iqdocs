@@ -3,15 +3,18 @@
 import {
   ArrowRight,
   CheckCircle2,
+  ChevronLeft,
   ChevronRight,
   Database,
   FileText,
   Layers,
+  Quote,
   Sparkles,
   Users,
 } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
+import { useRef, useState } from "react";
 import type { RoutePath } from "../types";
 
 interface HomeProps {
@@ -37,93 +40,187 @@ export default function Home({ onNavigate }: HomeProps) {
     },
   };
 
+  const [scrollEl, setScrollEl] = useState<HTMLDivElement | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeIndexRef = useRef(0);
+  const scrollListenerAttached = useRef(false);
+
+  const testimonials = [
+    {
+      name: "Sarah Mitchell",
+      initials: "SM",
+      title: "Medical Practice Owner, Houston",
+      text: "IQ-docs transformed our messy books into a clean, organized system. Our CPA was amazed at how well everything was structured during tax season.",
+    },
+    {
+      name: "James Rivera",
+      initials: "JR",
+      title: "IT Consulting Firm",
+      text: "We were behind on our books for months. The IQ-docs team caught everything up quickly and now our monthly reports are always on time. Highly recommend.",
+    },
+    {
+      name: "Dr. Anika Patel",
+      initials: "AP",
+      title: "Locum Tenens Physician",
+      text: "As a traveling physician, I never had time to manage my finances. IQ-docs handles everything seamlessly so I can focus on my patients.",
+    },
+    {
+      name: "Marcus Thompson",
+      initials: "MT",
+      title: "Small Business Owner",
+      text: "The document management alone saved us hours every week. Everything is organized in the cloud and I can find any receipt or invoice in seconds.",
+    },
+    {
+      name: "Linda Nguyen",
+      initials: "LN",
+      title: "Healthcare Startup Founder",
+      text: "Professional, responsive, and genuinely caring. IQ-docs feels like an extension of our team. Their bookkeeping support has been invaluable for our growth.",
+    },
+    {
+      name: "Robert Keane",
+      initials: "RK",
+      title: "Construction Company CEO",
+      text: "We tried other bookkeeping services before but IQ-docs is different. They actually understand our business and provide practical solutions, not just numbers.",
+    },
+  ];
+
+  const totalTestimonials = testimonials.length;
+
+  const loopedTestimonials = [
+    ...testimonials,
+    ...testimonials,
+    ...testimonials,
+  ];
+
+  const getCardStep = () => {
+    if (!scrollEl) return 300;
+    const card = scrollEl.querySelector<HTMLElement>(":scope > div");
+    if (!card) return 300;
+    return card.offsetWidth + 24;
+  };
+
+  const getCardCount = () => {
+    if (!scrollEl) return 1;
+    return Math.round(scrollEl.offsetWidth / getCardStep()) || 1;
+  };
+
+  const handleScroll = () => {
+    if (!scrollEl) return;
+    const step = getCardStep();
+    const rawIndex = Math.round(scrollEl.scrollLeft / step);
+    const idx = rawIndex % totalTestimonials;
+    activeIndexRef.current = idx;
+    setActiveIndex(idx);
+
+    const totalCards = loopedTestimonials.length;
+    const atStart = rawIndex < 1;
+    const atEnd = rawIndex >= totalCards - 1;
+    if (atStart || atEnd) {
+      scrollEl.scrollLeft = (idx + totalTestimonials) * step;
+    }
+  };
+
+  const scrollNext = () => {
+    if (!scrollEl) return;
+    const step = getCardStep();
+    const cardsToShow = getCardCount();
+    scrollEl.scrollBy({ left: step * cardsToShow, behavior: "smooth" });
+  };
+
+  const scrollPrev = () => {
+    if (!scrollEl) return;
+    const step = getCardStep();
+    const cardsToShow = getCardCount();
+    scrollEl.scrollBy({ left: -step * cardsToShow, behavior: "smooth" });
+  };
+
+  const scrollRefCallback = (el: HTMLDivElement | null) => {
+    setScrollEl(el);
+    if (el && !scrollListenerAttached.current) {
+      scrollListenerAttached.current = true;
+      requestAnimationFrame(() => {
+        const step = getCardStep();
+        el.scrollLeft = totalTestimonials * step;
+        el.addEventListener("scroll", handleScroll, { passive: true });
+      });
+    }
+  };
+
   return (
     <div className="bg-white">
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden bg-linear-to-b from-slate-50 to-white pt-16 sm:pt-20 md:pt-28 pb-20 sm:pb-24 md:pb-36 border-b border-slate-100">
-        {/* Subtle decorative grid/glow backdrops */}
-        <div className="absolute inset-0 bg-[radial-gradient(45rem_50rem_at_top,var(--color-emerald-50),transparent)] opacity-40" />
-        <div className="absolute top-1/2 left-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 bg-emerald-100/30 blur-3xl rounded-full" />
+      <section className="relative overflow-hidden pt-24 sm:pt-28 md:pt-36 pb-20 sm:pb-24 md:pb-36 min-h-[500px] md:min-h-[600px] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/hero.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-slate-900/70" />
+        </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-            {/* Left: Text Content */}
-            <div className="text-center lg:text-left">
-              {/* Top Badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-1.5 rounded-full bg-slate-50 px-3 py-1 text-[10px] sm:text-xs font-semibold text-slate-700 border border-slate-200/80 mb-4 sm:mb-6"
-              >
-                <Sparkles className="h-3.5 w-3.5 text-emerald-500 animate-pulse" />
-                <span>Houston, TX &bull; QuickBooks Online Specialists</span>
-              </motion.div>
-
-              {/* Main Headline */}
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1, duration: 0.6 }}
-                className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-slate-950 leading-tight"
-              >
-                Helping businesses save time, stay compliant, and make smarter
-                financial decisions.
-              </motion.h1>
-
-              {/* Subtitle */}
-              <motion.p
-                initial={{ opacity: 0, y: 25 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-                className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-slate-600 max-w-xl mx-auto lg:mx-0"
-              >
-                Behind on your bookkeeping? We'll get your books back on track,
-                organize your paperwork, and take care of your back-office
-                administration&mdash;so you can get back to running your
-                business with confidence.
-              </motion.p>
-
-              {/* CTA Group */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-                className="mt-8 flex flex-col sm:flex-row items-center lg:justify-start justify-center gap-4"
-              >
-                <button
-                  type="button"
-                  onClick={() => onNavigate("/contact")}
-                  className="w-full sm:w-auto group flex items-center justify-center space-x-2 rounded-full bg-slate-900 px-8 py-4 text-sm font-semibold text-white hover:bg-slate-800 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
-                >
-                  <span>Book Your Free Consultation</span>
-                  <ArrowRight className="h-4.5 w-4.5 text-emerald-400 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => onNavigate("/books-cleanup")}
-                  className="w-full sm:w-auto flex items-center justify-center space-x-2 rounded-full bg-white border border-slate-200 px-8 py-4 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors cursor-pointer"
-                >
-                  <span>Explore QuickBooks Cleanup</span>
-                </button>
-              </motion.div>
-            </div>
-
-            {/* Right: Professional Illustration */}
+          <div className="mx-auto max-w-4xl text-center">
+            {/* Top Badge */}
             <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4, duration: 0.7 }}
-              className="hidden lg:flex justify-center items-center"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur-sm px-3 py-1 text-[10px] sm:text-xs font-semibold text-white border border-white/20 mb-4 sm:mb-6"
             >
-              <Image
-                src="/hero-illustration.jpg"
-                alt="Professional bookkeeping illustration"
-                width={500}
-                height={500}
-                className="w-full max-w-md h-auto object-contain rounded-2xl shadow-xl"
-                priority
-              />
+              <Sparkles className="h-3.5 w-3.5 text-emerald-400 animate-pulse" />
+              <span>Houston, TX &bull; QuickBooks Online Specialists</span>
+            </motion.div>
+
+            {/* Main Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.6 }}
+              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight"
+            >
+              Helping businesses save time, stay compliant, and make smarter
+              financial decisions.
+            </motion.h1>
+
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-slate-200 max-w-2xl mx-auto"
+            >
+              Behind on your bookkeeping? We'll get your books back on track,
+              organize your paperwork, and take care of your back-office
+              administration&mdash;so you can get back to running your business
+              with confidence.
+            </motion.p>
+
+            {/* CTA Group */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
+            >
+              <button
+                type="button"
+                onClick={() => onNavigate("/contact")}
+                className="w-full sm:w-auto group flex items-center justify-center space-x-2 rounded-full bg-emerald-500 px-8 py-4 text-sm font-semibold text-white hover:bg-emerald-600 transition-all duration-200 shadow-lg shadow-emerald-500/25 hover:shadow-xl cursor-pointer"
+              >
+                <span>Book Your Free Consultation</span>
+                <ArrowRight className="h-4.5 w-4.5 group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button
+                type="button"
+                onClick={() => onNavigate("/books-cleanup")}
+                className="w-full sm:w-auto flex items-center justify-center space-x-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-8 py-4 text-sm font-semibold text-white hover:bg-white/20 transition-colors cursor-pointer"
+              >
+                <span>Explore QuickBooks Cleanup</span>
+              </button>
             </motion.div>
           </div>
         </div>
@@ -368,6 +465,81 @@ export default function Home({ onNavigate }: HomeProps) {
             >
               <span>Explore Our Services</span>
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. TESTIMONIALS SECTION */}
+      <section className="py-16 md:py-24 bg-white border-t border-slate-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3.5 py-1.5 text-xs font-semibold text-emerald-700 border border-emerald-100">
+              <Quote className="h-3.5 w-3.5" />
+              <span>What Our Clients Say</span>
+            </span>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              Trusted by Growing Businesses
+            </h2>
+            <p className="mt-3 text-sm text-slate-600 max-w-2xl mx-auto">
+              Hear directly from the clients who rely on IQ-docs for their
+              bookkeeping and back-office needs.
+            </p>
+          </div>
+
+          <div className="relative">
+            <div
+              ref={scrollRefCallback}
+              className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4"
+              style={{ scrollbarWidth: "none" }}
+            >
+              {loopedTestimonials.map((t, i) => (
+                <div
+                  key={`${t.name}-${i}`}
+                  className="min-w-[85vw] md:min-w-[calc(33.333%-1rem)] snap-center bg-slate-50/60 rounded-2xl border border-slate-100 p-8 hover:border-emerald-200 hover:shadow-md transition-all flex flex-col"
+                >
+                  <Quote className="h-8 w-8 text-emerald-200 mb-4" />
+                  <p className="text-sm leading-relaxed text-slate-600 flex-1">
+                    &ldquo;{t.text}&rdquo;
+                  </p>
+                  <div className="mt-6 pt-6 border-t border-slate-100 flex items-center gap-4">
+                    <div className="h-12 w-12 rounded-full bg-linear-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white font-bold text-sm shrink-0">
+                      {t.initials}
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold text-slate-900">
+                        {t.name}
+                      </p>
+                      <p className="text-xs text-slate-500">{t.title}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Counter + Navigation */}
+            <div className="flex items-center justify-center gap-4 mt-6">
+              <span className="text-sm font-medium text-slate-500">
+                Showing{" "}
+                <span className="text-slate-900">{activeIndex + 1}</span> of{" "}
+                <span className="text-slate-900">{totalTestimonials}</span>
+              </span>
+              <div className="flex gap-3">
+                <button
+                  type="button"
+                  onClick={scrollPrev}
+                  className="h-10 w-10 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-600 hover:bg-slate-50 transition-colors cursor-pointer shadow-sm"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={scrollNext}
+                  className="h-10 w-10 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-600 hover:bg-slate-50 transition-colors cursor-pointer shadow-sm"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

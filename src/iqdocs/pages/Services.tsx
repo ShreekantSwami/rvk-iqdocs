@@ -12,6 +12,7 @@ import {
   Zap,
 } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+import Image from "next/image";
 import { useState } from "react";
 import type { RoutePath } from "../types";
 
@@ -53,19 +54,28 @@ export default function Services({ onNavigate }: ServicesProps) {
   return (
     <div className="bg-white">
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden bg-slate-900 text-white py-16 sm:py-20 md:py-16 md:py-24 lg:py-32">
-        <div className="absolute inset-0 bg-[radial-gradient(50rem_50rem_at_top,rgba(43,20,0,0.4),transparent)]" />
-        <div className="absolute bottom-0 left-1/4 h-[35rem] w-[35rem] -translate-x-1/2 bg-emerald-500/10 blur-3xl rounded-full" />
+      <section className="relative overflow-hidden pt-24 sm:pt-28 md:pt-36 pb-20 sm:pb-24 md:pb-36 min-h-[500px] md:min-h-[600px] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/service-representator.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-slate-900/70" />
+        </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-800 px-3 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs font-semibold text-emerald-400 border border-slate-700/60 mb-4 sm:mb-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur-sm px-3 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs font-semibold text-white border border-white/20 mb-4 sm:mb-6">
               Our Services
             </span>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
               Premium Bookkeeping & Business Support
             </h1>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-slate-300 max-w-2xl">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-slate-200 max-w-2xl mx-auto">
               Simplify your operations with professional bookkeeping and
               dedicated back-office support tailored to your business. We keep
               your accounts accurate, your records organized, and your

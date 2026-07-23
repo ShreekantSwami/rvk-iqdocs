@@ -11,6 +11,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+import Image from "next/image";
 import type React from "react";
 import { useState } from "react";
 import type { RoutePath } from "../types";
@@ -88,17 +89,28 @@ export default function Contact({ onNavigate: _onNavigate }: ContactProps) {
   return (
     <div className="bg-white">
       {/* 1. HERO HEADER */}
-      <section className="relative overflow-hidden bg-slate-50 py-16 sm:py-20 md:py-16 md:py-24 lg:py-32 border-b border-slate-100">
-        <div className="absolute inset-0 bg-[radial-gradient(40rem_40rem_at_top,var(--color-emerald-50),transparent)] opacity-60" />
+      <section className="relative overflow-hidden pt-24 sm:pt-28 md:pt-36 pb-20 sm:pb-24 md:pb-36 min-h-[500px] md:min-h-[600px] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/contact-us.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-slate-900/70" />
+        </div>
+
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs font-semibold text-slate-800 border border-slate-200 mb-4 sm:mb-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur-sm px-3 py-1 sm:px-3.5 sm:py-1.5 text-[10px] sm:text-xs font-semibold text-white border border-white/20 mb-4 sm:mb-6">
               Contact Us
             </span>
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
               Ready to Simplify Your Business Operations?
             </h1>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-slate-600">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-slate-200 max-w-2xl mx-auto">
               Discover how IQ-docs can help you create cleaner records,
               organized systems, and stress-free bookkeeping support. Schedule a
               friendly, no-pressure consultation where we'll review your current
@@ -176,7 +188,7 @@ export default function Contact({ onNavigate: _onNavigate }: ContactProps) {
                       Business Hours
                     </h4>
                     <p className="mt-1.5 text-sm font-bold text-slate-900">
-                      Monday–Friday 6:00 AM – 6:00 PM (Central Time)
+                      Monday–Friday 6:00 AM – 6:00 PM (CST)
                     </p>
                     <p className="text-xs text-slate-500 mt-0.5">
                       Dedicated local coverage

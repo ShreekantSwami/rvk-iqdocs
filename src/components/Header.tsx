@@ -26,7 +26,7 @@ export default function Header() {
         <div className="flex items-center space-x-4">
           <span>Houston, Texas</span>
           <span className="hidden sm:inline">
-            Mon-Fri 6:00 AM - 6:00 PM (Central Time)
+            Mon-Fri 6:00 AM - 6:00 PM (CST)
           </span>
         </div>
         <div className="flex items-center space-x-4">

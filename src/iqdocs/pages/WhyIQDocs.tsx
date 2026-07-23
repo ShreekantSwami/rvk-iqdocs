@@ -8,6 +8,7 @@ import {
   MapPin,
   ShieldCheck,
 } from "lucide-react";
+import Image from "next/image";
 import type { RoutePath } from "../types";
 
 interface WhyIQDocsProps {
@@ -18,18 +19,29 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
   return (
     <div className="bg-white">
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden bg-slate-50 py-16 sm:py-20 md:py-16 md:py-24 lg:py-32 border-b border-slate-100">
-        <div className="absolute inset-0 bg-[radial-gradient(40rem_40rem_at_top,var(--color-emerald-50),transparent)] opacity-60" />
+      <section className="relative overflow-hidden pt-24 sm:pt-28 md:pt-36 pb-20 sm:pb-24 md:pb-36 min-h-[500px] md:min-h-[600px] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/why-iq-docs.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-slate-900/70" />
+        </div>
+
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 sm:px-3.5 sm:py-1.5 text-[10px] sm:text-xs font-semibold text-slate-800 border border-slate-200 mb-4 sm:mb-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur-sm px-3 py-1 sm:px-3.5 sm:py-1.5 text-[10px] sm:text-xs font-semibold text-white border border-white/20 mb-4 sm:mb-6">
               Our Story & Values
             </span>
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900">
-              Down-to-Earth Help for Locums, Healthcare, Professionals, IT,
-              Small Business & Individuals
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
+              Practical, Down-to-Earth Support for Locums, Healthcare
+              Professionals, IT Experts, Small Businesses & Individuals
             </h1>
-            <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-slate-600 max-w-2xl mx-auto">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-slate-200 max-w-2xl mx-auto">
               Our service is built on integrity, simple communication, and
               genuine care. We help Houston businesses get their books cleaned
               up and kept organized without any complicated jargon.
@@ -46,7 +58,7 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
               Why Businesses Choose IQ-docs
             </h2>
             <p className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-              More Than a Service. A Trusted Business Partner.
+              More Than a Service, A Trusted Business Partner.
             </p>
           </div>
 
@@ -176,7 +188,7 @@ export default function WhyIQDocs({ onNavigate }: WhyIQDocsProps) {
                     val: "QuickBooks Online & Xero",
                   },
                   { label: "Client Onboarding", val: "5-7 Business Days" },
-                  { label: "BUSINESS HOURS", val: "6:00 AM - 6:00 PM CT" },
+                  { label: "BUSINESS HOURS", val: "6:00 AM - 6:00 PM CST" },
                 ].map((stat) => (
                   <div key={stat.label} className="space-y-1">
                     <div className="text-[10px] font-mono tracking-wider text-slate-500 uppercase">

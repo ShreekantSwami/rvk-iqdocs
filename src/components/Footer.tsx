@@ -104,7 +104,7 @@ export default function Footer() {
                 <div>
                   <p className="text-slate-200">Business Hours</p>
                   <p className="text-xs text-slate-400">
-                    Monday-Friday 6:00 AM - 6:00 PM (Central Time)
+                    Monday-Friday 6:00 AM - 6:00 PM (CST)
                   </p>
                 </div>
               </div>
